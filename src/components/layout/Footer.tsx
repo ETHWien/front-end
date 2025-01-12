@@ -1,13 +1,14 @@
+import { SITE_CONFIG } from '@/constants';
+
 export default function Footer() {
     return (
         <footer className="bg-black text-gray-400 py-12">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div>
-                        <h3 className="text-white text-lg font-semibold mb-4">ETH Vienna</h3>
+                        <h3 className="text-white text-lg font-semibold mb-4">{SITE_CONFIG.name}</h3>
                         <p className="text-sm">
-                            The biggest Ethereum hackathon in Vienna, bringing together developers,
-                            designers, and innovators.
+                            {SITE_CONFIG.description}
                         </p>
                     </div>
 
@@ -24,9 +25,34 @@ export default function Footer() {
                     <div>
                         <h4 className="text-white text-md font-semibold mb-4">Contact</h4>
                         <ul className="space-y-2">
-                            <li><a href="mailto:info@ethvienna.com" className="hover:text-white">info@ethvienna.com</a></li>
-                            <li><a href="https://twitter.com/ethvienna" className="hover:text-white">Twitter</a></li>
-                            <li><a href="https://discord.gg/ethvienna" className="hover:text-white">Discord</a></li>
+                            <li>
+                                <a
+                                    href={`mailto:${SITE_CONFIG.contact.email}`}
+                                    className="hover:text-white"
+                                >
+                                    {SITE_CONFIG.contact.email}
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href={SITE_CONFIG.contact.social.twitter}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:text-white"
+                                >
+                                    Twitter
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href={SITE_CONFIG.contact.social.discord}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:text-white"
+                                >
+                                    Discord
+                                </a>
+                            </li>
                         </ul>
                     </div>
 
@@ -40,7 +66,7 @@ export default function Footer() {
                             />
                             <button
                                 type="submit"
-                                className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+                                className="w-full bg-[#6C3CE9] text-white px-4 py-2 rounded-lg hover:bg-[#5B32C7]"
                             >
                                 Subscribe
                             </button>
@@ -49,7 +75,18 @@ export default function Footer() {
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-gray-800 text-center">
-                    <p>&copy; {new Date().getFullYear()} ETH Vienna. All rights reserved.</p>
+                    <p>
+                        &copy; {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
+                        <br />
+                        <a
+                            href={SITE_CONFIG.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-white"
+                        >
+                            {SITE_CONFIG.website.replace('https://', '')}
+                        </a>
+                    </p>
                 </div>
             </div>
         </footer>
