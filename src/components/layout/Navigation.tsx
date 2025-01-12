@@ -1,10 +1,12 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (path: string) => pathname === path;
 
   return (
     <nav className="fixed w-full bg-black/90 backdrop-blur-sm z-50">
@@ -15,19 +17,40 @@ export default function Navigation() {
               ETH Vienna
             </Link>
           </div>
-          
+
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2">
+              <Link
+                href="/about"
+                className={`${isActive('/about')
+                    ? 'text-white bg-gray-900'
+                    : 'text-gray-300 hover:text-white'
+                  } px-3 py-2 rounded-md`}
+              >
                 About
               </Link>
-              <Link href="/schedule" className="text-gray-300 hover:text-white px-3 py-2">
+              <Link
+                href="/schedule"
+                className={`${isActive('/schedule')
+                    ? 'text-white bg-gray-900'
+                    : 'text-gray-300 hover:text-white'
+                  } px-3 py-2 rounded-md`}
+              >
                 Schedule
               </Link>
-              <Link href="/sponsors" className="text-gray-300 hover:text-white px-3 py-2">
+              <Link
+                href="/sponsors"
+                className={`${isActive('/sponsors')
+                    ? 'text-white bg-gray-900'
+                    : 'text-gray-300 hover:text-white'
+                  } px-3 py-2 rounded-md`}
+              >
                 Sponsors
               </Link>
-              <Link href="/register" className="bg-blue-600 text-white px-4 py-2 rounded-lg">
+              <Link
+                href="/register"
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              >
                 Register Now
               </Link>
             </div>

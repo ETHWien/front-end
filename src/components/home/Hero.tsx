@@ -12,7 +12,7 @@ export default function Hero() {
                 </h1>
 
                 <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                    Join hundreds of builders, designers, and innovators for Europe's
+                    Join hundreds of builders, designers, and innovators for Europe&apos;s
                     premier Ethereum hackathon experience
                 </p>
 

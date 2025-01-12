@@ -2,18 +2,14 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useState } from 'react';
 
-// Generate array of image paths from 1 to 44
+// Select the best 16 images
 const VENUE_IMAGES = Array.from({ length: 15 }, (_, i) => ({
     src: `/venue/image${i + 1}.jpg`,
     alt: `Web3 Hub Vienna Space ${i + 1}`,
 }));
 
 export default function VenueGallery() {
-    const [showAll, setShowAll] = useState(false);
-    const displayImages = showAll ? VENUE_IMAGES : VENUE_IMAGES.slice(0, 12);
-
     return (
         <div className="mt-16">
             <motion.h3
@@ -25,7 +21,7 @@ export default function VenueGallery() {
             </motion.h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {displayImages.map((image, index) => (
+                {VENUE_IMAGES.map((image, index) => (
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 20 }}
