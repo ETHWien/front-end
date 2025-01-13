@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Hero() {
     return (
         <div className="relative min-h-screen bg-[#1C1C1C] flex items-center">
@@ -32,10 +34,13 @@ export default function Hero() {
 
                 {/* Right image */}
                 <div className="flex-1 relative w-full max-w-lg">
-                    <img
+                    <Image
                         src="/Image.png"
                         alt="Vienna Karlskirche Illustration"
+                        width={600}
+                        height={600}
                         className="w-full h-auto"
+                        priority
                     />
                 </div>
             </div>

@@ -2,11 +2,9 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { usePathname } from 'next/navigation';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
 
   return (
     <nav className="fixed w-full bg-[#1C1C1C]/90 backdrop-blur-sm z-50 border-b border-gray-800">

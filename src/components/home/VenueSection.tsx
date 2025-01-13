@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { SITE_CONFIG } from '@/constants';
 import VenueGallery from './VenueGallery';
 
