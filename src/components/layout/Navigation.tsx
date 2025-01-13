@@ -1,60 +1,50 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
+import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  const isActive = (path: string) => pathname === path;
-
   return (
-    <nav className="fixed w-full bg-black/90 backdrop-blur-sm z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed w-full bg-[#1C1C1C]/90 backdrop-blur-sm z-50 border-b border-gray-800">
+      <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <Link href="/" className="text-white font-bold text-xl">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-white rotate-45" />
+            <Link href="/" className="text-white font-semibold text-lg">
               ETH Vienna
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="flex items-center gap-8">
               <Link
                 href="/about"
-                className={`${isActive('/about')
-                    ? 'text-white bg-gray-900'
-                    : 'text-gray-300 hover:text-white'
-                  } px-3 py-2 rounded-md`}
+                className="text-gray-300 hover:text-white transition-colors"
               >
                 About
               </Link>
               <Link
                 href="/schedule"
-                className={`${isActive('/schedule')
-                    ? 'text-white bg-gray-900'
-                    : 'text-gray-300 hover:text-white'
-                  } px-3 py-2 rounded-md`}
+                className="text-gray-300 hover:text-white transition-colors"
               >
                 Schedule
               </Link>
               <Link
                 href="/sponsors"
-                className={`${isActive('/sponsors')
-                    ? 'text-white bg-gray-900'
-                    : 'text-gray-300 hover:text-white'
-                  } px-3 py-2 rounded-md`}
+                className="text-gray-300 hover:text-white transition-colors"
               >
                 Sponsors
               </Link>
               <Link
                 href="/register"
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+                className="bg-white text-black px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
               >
-                Register Now
+                Register
               </Link>
             </div>
           </div>
@@ -63,84 +53,53 @@ export default function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
-              aria-expanded="false"
+              className="text-gray-300 hover:text-white"
             >
-              <span className="sr-only">Open main menu</span>
-              {/* Hamburger icon */}
-              <svg
-                className={`${isOpen ? 'hidden' : 'block'} h-6 w-6`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-              {/* Close icon */}
-              <svg
-                className={`${isOpen ? 'block' : 'hidden'} h-6 w-6`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              <span className="sr-only">Open menu</span>
+              {!isOpen ? (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              ) : (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              )}
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile Navigation */}
-      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/90 backdrop-blur-sm">
+      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-[#1C1C1C] border-t border-gray-800`}>
+        <div className="px-4 py-4 space-y-3">
           <Link
             href="/about"
-            className={`${isActive('/about')
-                ? 'text-white bg-gray-900'
-                : 'text-gray-300 hover:text-white hover:bg-gray-700'
-              } block px-3 py-2 rounded-md text-base font-medium`}
+            className="block text-gray-300 hover:text-white transition-colors"
             onClick={() => setIsOpen(false)}
           >
             About
           </Link>
           <Link
             href="/schedule"
-            className={`${isActive('/schedule')
-                ? 'text-white bg-gray-900'
-                : 'text-gray-300 hover:text-white hover:bg-gray-700'
-              } block px-3 py-2 rounded-md text-base font-medium`}
+            className="block text-gray-300 hover:text-white transition-colors"
             onClick={() => setIsOpen(false)}
           >
             Schedule
           </Link>
           <Link
             href="/sponsors"
-            className={`${isActive('/sponsors')
-                ? 'text-white bg-gray-900'
-                : 'text-gray-300 hover:text-white hover:bg-gray-700'
-              } block px-3 py-2 rounded-md text-base font-medium`}
+            className="block text-gray-300 hover:text-white transition-colors"
             onClick={() => setIsOpen(false)}
           >
             Sponsors
           </Link>
           <Link
             href="/register"
-            className="block w-full text-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+            className="block bg-white text-black px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors text-center"
             onClick={() => setIsOpen(false)}
           >
-            Register Now
+            Register
           </Link>
         </div>
       </div>
