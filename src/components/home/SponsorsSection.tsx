@@ -1,4 +1,5 @@
 
+import Image from 'next/image';
 import { Sponsor, SponsorTier } from '@/types/sponsor';
 
 const SPONSORS: Sponsor[] = [

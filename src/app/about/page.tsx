@@ -1,6 +1,6 @@
 import Navigation from '@/components/layout/Navigation';
-import AboutSection from '@/components/about/AboutSection';
 import Footer from '@/components/layout/Footer';
+import AboutSection from '@/components/about/AboutSection';
 
 export default function AboutPage() {
     return (

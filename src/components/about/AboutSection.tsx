@@ -1,4 +1,5 @@
- 
+
+export default function AboutSection() {
     return (
         <section className="bg-black py-12 font-mono">
             <div className="max-w-6xl mx-auto px-4">
@@ -89,7 +90,7 @@
                                 blockchain revolution.
                             </p>
                             <p>
-                                The city's rich history of intellectual discourse and technological
+                                Vienna&apos;s rich history of intellectual discourse and technological
                                 advancement makes it an ideal location for fostering the next generation
                                 of blockchain innovations.
                             </p>
@@ -120,4 +121,4 @@
             </div>
         </section>
     );
-} 
+}
