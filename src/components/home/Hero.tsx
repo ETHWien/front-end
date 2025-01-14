@@ -26,7 +26,7 @@ export default function Hero() {
 
                         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 glitch-text">
                             ETH_VIENNA
-                            <span className="block text-[#0F0] mt-2">HACK_2024</span>
+                            <span className="block text-[#0F0] mt-2">HACK_2025</span>
                         </h1>
 
                         <p className="text-xl text-[#0F0] max-w-xl font-mono">

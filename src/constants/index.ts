@@ -2,7 +2,7 @@ export const SITE_CONFIG = {
     name: 'ETH Vienna',
     website: 'https://ethereum.wien',
     description: 'The biggest Ethereum hackathon in Vienna',
-    date: 'June 15-17, 2024',
+    date: 'September 15-17, 2025',
     venue: {
         name: 'District Living',
         address: 'Donaustadtstraße 45, 1220 Wien, Austria',
