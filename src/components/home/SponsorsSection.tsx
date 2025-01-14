@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import { Sponsor, SponsorTier } from '@/types/sponsor';
 
@@ -43,7 +42,6 @@ export default function SponsorsSection() {
                 {/* Section header */}
                 <div className="mb-12">
                     <div className="flex items-center gap-2 text-[#0F0] mb-6">
-                        <span className="text-[#0F0]">root@ethvienna:~$</span>
                         <span className="animate-pulse">▊</span>
                     </div>
 

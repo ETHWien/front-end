@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import TerminalPrompt from '../terminal/TerminalPrompt';
 
 export default function Hero() {
     return (
@@ -16,26 +17,22 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-black/80" />
             </div>
 
-            <div className="max-w-6xl mx-auto w-full px-4 flex flex-col lg:flex-row items-center justify-between gap-12 pt-16 relative z-10">
-                <div className="flex-1 space-y-8">
+            <div className="max-w-6xl mx-auto w-full px-4 relative z-10">
+                <div className="space-y-8 max-w-6xl">
                     <div>
-                        <div className="flex items-center gap-2 text-[#0F0] mb-6">
-                            <span className="text-[#0F0]">root@ethvienna:~$</span>
-                            <span className="animate-pulse">▊</span>
-                        </div>
-
-                        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 glitch-text">
+                        <h1 className="text-5xl sm:text-7xl font-bold text-white mb-6 glitch-text">
                             ETH_VIENNA
-                            <span className="block text-[#0F0] mt-2">HACK_2025</span>
+                            <span className="text-[#0F0]">_2025</span>
                         </h1>
-
-                        <p className="text-xl text-[#0F0] max-w-xl font-mono">
-                            Initializing decentralized protocol...
-                            <br />
-                            Loading blockchain innovations...
-                            <br />
-                            System ready for deployment.
+                        <p className="text-xl text-gray-400">
+                            Join the most innovative Ethereum hackathon in Vienna.
+                            36 hours of coding, learning, and building the future of Web3.
                         </p>
+                    </div>
+
+                    {/* Terminal Section */}
+                    <div className="w-full">
+                        <TerminalPrompt />
                     </div>
 
                     <div className="flex gap-4">
