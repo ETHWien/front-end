@@ -1,6 +1,7 @@
 import Hero from '@/components/home/Hero';
 import VenueSection from '@/components/home/VenueSection';
 import SpeakersSection from '@/components/home/SpeakersSection';
+import SponsorsSection from '@/components/home/SponsorsSection';
 import Footer from '@/components/layout/Footer';
 import Navigation from '@/components/layout/Navigation';
 
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <SpeakersSection />
       <VenueSection />
+      <SponsorsSection />
       <Footer />
     </div>
   );
