@@ -19,6 +19,7 @@ export default function Navigation() {
 
   // Helper to determine if a path is active
   const isActive = (path: string) => {
+    if (!pathname) return false;
     if (path === '/' && pathname === '/') return true;
     if (path !== '/' && pathname.startsWith(path)) return true;
     return false;
@@ -43,8 +44,8 @@ export default function Navigation() {
                   key={path}
                   href={path}
                   className={`transition-colors ${isActive(path)
-                      ? 'text-[#0F0] border border-[#0F0] px-4 py-2'
-                      : 'text-gray-400 hover:text-[#0F0]'
+                    ? 'text-[#0F0] border border-[#0F0] px-4 py-2'
+                    : 'text-gray-400 hover:text-[#0F0]'
                     }`}
                 >
                   {`/${label}`}
@@ -54,8 +55,8 @@ export default function Navigation() {
                 <Link
                   href="/register"
                   className={`px-4 py-2 transition-colors ${pathname === '/'
-                      ? 'border border-[#0F0] text-[#0F0] hover:bg-[#0F0] hover:text-black'
-                      : 'border border-gray-800 text-gray-400 hover:border-[#0F0] hover:text-[#0F0]'
+                    ? 'border border-[#0F0] text-[#0F0] hover:bg-[#0F0] hover:text-black'
+                    : 'border border-gray-800 text-gray-400 hover:border-[#0F0] hover:text-[#0F0]'
                     }`}
                 >
                   ./register.sh
@@ -89,8 +90,8 @@ export default function Navigation() {
               key={path}
               href={path}
               className={`block transition-colors ${isActive(path)
-                  ? 'text-[#0F0] border border-[#0F0] px-4 py-2'
-                  : 'text-gray-400 hover:text-[#0F0]'
+                ? 'text-[#0F0] border border-[#0F0] px-4 py-2'
+                : 'text-gray-400 hover:text-[#0F0]'
                 }`}
               onClick={() => setIsOpen(false)}
             >
@@ -101,8 +102,8 @@ export default function Navigation() {
             <Link
               href="/register"
               className={`block px-4 py-2 text-center transition-colors ${pathname === '/'
-                  ? 'border border-[#0F0] text-[#0F0] hover:bg-[#0F0] hover:text-black'
-                  : 'border border-gray-800 text-gray-400 hover:border-[#0F0] hover:text-[#0F0]'
+                ? 'border border-[#0F0] text-[#0F0] hover:bg-[#0F0] hover:text-black'
+                : 'border border-gray-800 text-gray-400 hover:border-[#0F0] hover:text-[#0F0]'
                 }`}
               onClick={() => setIsOpen(false)}
             >
