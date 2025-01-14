@@ -1,20 +1,20 @@
 import Image from 'next/image';
 import TerminalPrompt from '../terminal/TerminalPrompt';
+import fs from 'fs';
+import path from 'path';
+
+// Read ASCII art at build time
+const asciiArt = fs.readFileSync(path.join(process.cwd(), 'public/ascii-art.txt'), 'utf8');
 
 export default function Hero() {
     return (
         <div className="relative min-h-screen flex items-center overflow-hidden font-mono">
-            {/* Background Image with glitch effect */}
-            <div className="absolute inset-0">
-                <Image
-                    src="/EthVienna.jpg"
-                    alt="ETH Vienna Background"
-                    fill
-                    className="object-cover opacity-40"
-                    priority
-                    quality={100}
-                />
-                <div className="absolute inset-0 bg-black/80" />
+
+            {/* ASCII Art Background */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none overflow-hidden">
+                <pre className="text-[#0F0] text-[4px] sm:text-[8px] whitespace-pre select-none">
+                    {asciiArt}
+                </pre>
             </div>
 
             <div className="max-w-6xl mx-auto w-full px-4 relative z-10">
