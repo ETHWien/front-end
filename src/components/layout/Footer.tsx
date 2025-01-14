@@ -6,11 +6,6 @@ export default function Footer() {
             <div className="max-w-6xl mx-auto px-4">
                 {/* Footer header */}
                 <div className="mb-12">
-                    <div className="flex items-center gap-2 text-[#0F0] mb-6">
-                        <span className="text-[#0F0]">root@ethvienna:~$</span>
-                        <span className="animate-pulse">▊</span>
-                    </div>
-
                     <h2 className="text-4xl font-bold text-white mb-6 glitch-text">
                         Connect_With_Us
                     </h2>

@@ -41,10 +41,6 @@ export default function SponsorsSection() {
             <div className="max-w-6xl mx-auto px-4">
                 {/* Section header */}
                 <div className="mb-12">
-                    <div className="flex items-center gap-2 text-[#0F0] mb-6">
-                        <span className="animate-pulse">▊</span>
-                    </div>
-
                     <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 glitch-text">
                         Network_Partners
                     </h2>

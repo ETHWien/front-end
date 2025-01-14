@@ -38,10 +38,6 @@ export default function ScheduleSection() {
             <div className="max-w-6xl mx-auto px-4">
                 {/* Section header with terminal style */}
                 <div className="mb-12">
-                    <div className="flex items-center gap-2 text-[#0F0] mb-6">
-                        <span className="text-[#0F0]">root@ethvienna:~$</span>
-                        <span className="animate-pulse">▊</span>
-                    </div>
 
                     <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 glitch-text">
                         ./view-schedule.sh
@@ -59,8 +55,8 @@ export default function ScheduleSection() {
                             key={day}
                             onClick={() => setSelectedDay(day as 1 | 2 | 3)}
                             className={`px-6 py-3 border ${selectedDay === day
-                                    ? 'border-[#0F0] text-[#0F0]'
-                                    : 'border-gray-800 text-gray-500 hover:border-[#0F0] hover:text-[#0F0]'
+                                ? 'border-[#0F0] text-[#0F0]'
+                                : 'border-gray-800 text-gray-500 hover:border-[#0F0] hover:text-[#0F0]'
                                 } transition-all duration-300 font-mono`}
                         >
                             DAY_{day}.sh
