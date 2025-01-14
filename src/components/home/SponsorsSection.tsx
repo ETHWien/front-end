@@ -37,21 +37,23 @@ export default function SponsorsSection() {
     }, {} as Record<SponsorTier, Sponsor[]>);
 
     return (
-        <section className="bg-[#1C1C1C] py-12">
+        <section className="bg-black py-12 font-mono">
             <div className="max-w-6xl mx-auto px-4">
                 {/* Section header */}
                 <div className="mb-12">
-                    <div className="flex items-center gap-2 text-white mb-6">
-                        <div className="w-2 h-2 bg-white rotate-45" />
-                        <span>Sponsors</span>
+                    <div className="flex items-center gap-2 text-[#0F0] mb-6">
+                        <span className="text-[#0F0]">root@ethvienna:~$</span>
+                        <span className="animate-pulse">▊</span>
                     </div>
 
-                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-                        Our Partners
+                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 glitch-text">
+                        Network_Partners
                     </h2>
 
-                    <p className="text-xl text-gray-300 max-w-2xl">
-                        Join these industry leaders in supporting the future of Ethereum development.
+                    <p className="text-xl text-[#0F0] max-w-2xl">
+                        Loading alliance data...
+                        <br />
+                        Establishing connections...
                     </p>
                 </div>
 
@@ -63,9 +65,13 @@ export default function SponsorsSection() {
 
                         return (
                             <div key={tier} className="space-y-8">
-                                <h3 className="text-2xl font-semibold text-white">
-                                    {config.title}
-                                </h3>
+                                <div className="flex items-center gap-2">
+                                    <span className="text-[#0F0]">$</span>
+                                    <h3 className="text-2xl font-bold text-[#0F0]">
+                                        {config.title}
+                                    </h3>
+                                </div>
+
                                 <div className={`grid ${config.className} gap-8 items-center justify-items-center`}>
                                     {tierSponsors.map((sponsor) => (
                                         <a
@@ -73,13 +79,14 @@ export default function SponsorsSection() {
                                             href={sponsor.website}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="relative group"
+                                            className="relative group w-full"
                                         >
-                                            <div className={`relative ${config.imageSize} bg-[#252525] rounded-lg p-4 transition-all duration-300 group-hover:bg-[#303030]`}>
-                                                <img
+                                            <div className={`relative ${config.imageSize} border border-gray-800 hover:border-[#0F0] p-4 transition-all duration-300 group-hover:bg-black/50`}>
+                                                <Image
                                                     src={sponsor.logo}
                                                     alt={`${sponsor.name} logo`}
-                                                    className="object-contain p-4 filter brightness-0 invert opacity-80 group-hover:opacity-100 w-full h-full"
+                                                    fill
+                                                    className="object-contain p-4 filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-all duration-300"
                                                 />
                                             </div>
                                         </a>
@@ -92,14 +99,17 @@ export default function SponsorsSection() {
 
                 {/* Become a sponsor CTA */}
                 <div className="mt-16 text-center">
-                    <a
-                        href="/sponsors"
-                        className="inline-block bg-white text-black px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors"
-                    >
-                        Become a Sponsor
-                    </a>
+                    <div className="inline-flex flex-col items-center">
+                        <span className="text-[#0F0] mb-4">$ ./join-alliance.sh</span>
+                        <a
+                            href="/sponsors"
+                            className="inline-block border border-[#0F0] text-[#0F0] px-8 py-3 hover:bg-[#0F0] hover:text-black transition-colors"
+                        >
+                            Become_Partner
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
     );
-} 
+}

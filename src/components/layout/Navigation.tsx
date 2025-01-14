@@ -2,48 +2,65 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+
+const NAV_ITEMS = [
+  { path: '/about', label: 'About' },
+  { path: '/schedule', label: 'Schedule' },
+  { path: '/sponsors', label: 'Sponsors' },
+];
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Don't show register button on register page
+  const showRegister = pathname !== '/register';
+
+  // Helper to determine if a path is active
+  const isActive = (path: string) => {
+    if (path === '/' && pathname === '/') return true;
+    if (path !== '/' && pathname.startsWith(path)) return true;
+    return false;
+  };
 
   return (
-    <nav className="fixed w-full bg-[#1C1C1C]/90 backdrop-blur-sm z-50 border-b border-gray-800">
+    <nav className="fixed w-full bg-black/90 backdrop-blur-sm z-50 border-b border-[#0F0]/30 font-mono">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-white rotate-45" />
-            <Link href="/" className="text-white font-semibold text-lg">
-              ETH Vienna
+            <span className="text-[#0F0]">$</span>
+            <Link href="/" className="text-[#0F0] font-mono text-lg">
+              ETH_VIENNA
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="flex items-center gap-8">
-              <Link
-                href="/about"
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                About
-              </Link>
-              <Link
-                href="/schedule"
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                Schedule
-              </Link>
-              <Link
-                href="/sponsors"
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                Sponsors
-              </Link>
-              <Link
-                href="/register"
-                className="bg-white text-black px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
-              >
-                Register
-              </Link>
+              {NAV_ITEMS.map(({ path, label }) => (
+                <Link
+                  key={path}
+                  href={path}
+                  className={`transition-colors ${isActive(path)
+                      ? 'text-[#0F0] border border-[#0F0] px-4 py-2'
+                      : 'text-gray-400 hover:text-[#0F0]'
+                    }`}
+                >
+                  {`/${label}`}
+                </Link>
+              ))}
+              {showRegister && (
+                <Link
+                  href="/register"
+                  className={`px-4 py-2 transition-colors ${pathname === '/'
+                      ? 'border border-[#0F0] text-[#0F0] hover:bg-[#0F0] hover:text-black'
+                      : 'border border-gray-800 text-gray-400 hover:border-[#0F0] hover:text-[#0F0]'
+                    }`}
+                >
+                  ./register.sh
+                </Link>
+              )}
             </div>
           </div>
 
@@ -51,17 +68,13 @@ export default function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-white"
+              className="text-[#0F0]"
             >
               <span className="sr-only">Open menu</span>
               {!isOpen ? (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
+                <span className="block">{'>'}</span>
               ) : (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                <span className="block">{'x'}</span>
               )}
             </button>
           </div>
@@ -69,36 +82,33 @@ export default function Navigation() {
       </div>
 
       {/* Mobile Navigation */}
-      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-[#1C1C1C] border-t border-gray-800`}>
+      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-black border-t border-[#0F0]/30`}>
         <div className="px-4 py-4 space-y-3">
-          <Link
-            href="/about"
-            className="block text-gray-300 hover:text-white transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            About
-          </Link>
-          <Link
-            href="/schedule"
-            className="block text-gray-300 hover:text-white transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            Schedule
-          </Link>
-          <Link
-            href="/sponsors"
-            className="block text-gray-300 hover:text-white transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            Sponsors
-          </Link>
-          <Link
-            href="/register"
-            className="block bg-white text-black px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors text-center"
-            onClick={() => setIsOpen(false)}
-          >
-            Register
-          </Link>
+          {NAV_ITEMS.map(({ path, label }) => (
+            <Link
+              key={path}
+              href={path}
+              className={`block transition-colors ${isActive(path)
+                  ? 'text-[#0F0] border border-[#0F0] px-4 py-2'
+                  : 'text-gray-400 hover:text-[#0F0]'
+                }`}
+              onClick={() => setIsOpen(false)}
+            >
+              {`/${label}`}
+            </Link>
+          ))}
+          {showRegister && (
+            <Link
+              href="/register"
+              className={`block px-4 py-2 text-center transition-colors ${pathname === '/'
+                  ? 'border border-[#0F0] text-[#0F0] hover:bg-[#0F0] hover:text-black'
+                  : 'border border-gray-800 text-gray-400 hover:border-[#0F0] hover:text-[#0F0]'
+                }`}
+              onClick={() => setIsOpen(false)}
+            >
+              ./register.sh
+            </Link>
+          )}
         </div>
       </div>
     </nav>

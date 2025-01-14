@@ -1,8 +1,8 @@
-export type EventType = 'talk' | 'workshop' | 'networking' | 'break' | 'other';
+
 
 export interface ScheduleEvent {
     title: string;
-    type: EventType;
+    type: "talk" | "workshop" | "break" | "social" | "other";
     speaker?: string;
     time: string;
     description: string;

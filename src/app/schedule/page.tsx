@@ -1,6 +1,7 @@
-import Navigation from '@/components/layout/Navigation';
+
 import ScheduleSection from '@/components/schedule/ScheduleSection';
 import Footer from '@/components/layout/Footer';
+import Navigation from '@/components/layout/Navigation';
 
 export default function SchedulePage() {
     return (

@@ -1,7 +1,15 @@
-export default function About() {
+import Navigation from '@/components/layout/Navigation';
+import AboutSection from '@/components/about/AboutSection';
+import Footer from '@/components/layout/Footer';
+
+export default function AboutPage() {
     return (
-        <div className="min-h-screen bg-black text-white pt-20">
-            <h1>About ETH Vienna</h1>
-        </div>
+        <main className="min-h-screen bg-black">
+            <Navigation />
+            <div className="pt-20">
+                <AboutSection />
+            </div>
+            <Footer />
+        </main>
     );
 } 

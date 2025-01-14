@@ -15,19 +15,16 @@ const VENUE_IMAGES = [
 export default function VenueGallery() {
     return (
         <div>
-            <div className="flex items-center gap-2 text-white mb-6">
-                <div className="w-2 h-2 bg-white rotate-45" />
-                <span>Gallery</span>
+            <div className="flex items-center gap-2 text-[#0F0] mb-6">
+                <span className="text-[#0F0]">ls</span>
+                <span className="text-[#0F0]">venue_images/</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {VENUE_IMAGES.map((image, index) => (
-                    <motion.div
+                    <div
                         key={index}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                        className="relative aspect-video overflow-hidden rounded-lg"
+                        className="relative aspect-video overflow-hidden border border-gray-800 hover:border-[#0F0] transition-all duration-300"
                     >
                         <Image
                             src={image.src}
@@ -36,7 +33,7 @@ export default function VenueGallery() {
                             className="object-cover hover:scale-105 transition-transform duration-300"
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
-                    </motion.div>
+                    </div>
                 ))}
             </div>
         </div>

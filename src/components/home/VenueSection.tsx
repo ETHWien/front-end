@@ -5,43 +5,48 @@ import VenueGallery from './VenueGallery';
 
 export default function VenueSection() {
     return (
-        <section className="bg-[#1C1C1C] py-12">
+        <section className="bg-black py-12 font-mono">
             <div className="max-w-6xl mx-auto px-4">
-                <div className="mb-16">
-                    <div className="flex items-center gap-2 text-white mb-6">
-                        <div className="w-2 h-2 bg-white rotate-45" />
-                        <span>The Venue</span>
+                {/* Section header */}
+                <div className="mb-12">
+                    <div className="flex items-center gap-2 text-[#0F0] mb-6">
+                        <span className="text-[#0F0]">root@ethvienna:~$</span>
+                        <span className="animate-pulse">▊</span>
                     </div>
 
-                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-                        District Living
+                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 glitch-text">
+                        Base_Location
                     </h2>
 
-                    <p className="text-xl text-gray-300 max-w-2xl">
-                        Join us at one of Vienna&apos;s most innovative spaces, perfectly equipped
-                        for collaboration, networking, and building the future of Web3.
+                    <p className="text-xl text-[#0F0] max-w-2xl">
+                        Initializing coordinates...
+                        <br />
+                        Loading venue specifications...
                     </p>
                 </div>
 
+                {/* Info boxes */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
-                    <div className="bg-[#252525] p-8 rounded-lg border border-gray-800">
-                        <h3 className="text-xl font-semibold text-white mb-2">When</h3>
-                        <p className="text-gray-300">{SITE_CONFIG.date}</p>
+                    <div className="border border-gray-800 p-8 hover:border-[#0F0] transition-all duration-300">
+                        <h3 className="text-xl font-bold text-[#0F0] mb-2">TIME_STAMP</h3>
+                        <p className="text-gray-400">{SITE_CONFIG.date}</p>
                     </div>
 
-                    <div className="bg-[#252525] p-8 rounded-lg border border-gray-800">
-                        <h3 className="text-xl font-semibold text-white mb-2">Where</h3>
-                        <p className="text-gray-300">{SITE_CONFIG.venue.address}</p>
+                    <div className="border border-gray-800 p-8 hover:border-[#0F0] transition-all duration-300">
+                        <h3 className="text-xl font-bold text-[#0F0] mb-2">LOCATION</h3>
+                        <p className="text-gray-400">{SITE_CONFIG.venue.address}</p>
                     </div>
 
-                    <div className="bg-[#252525] p-8 rounded-lg border border-gray-800">
-                        <h3 className="text-xl font-semibold text-white mb-2">Getting There</h3>
-                        <p className="text-gray-300">Near U2 Donaustadtbrücke</p>
+                    <div className="border border-gray-800 p-8 hover:border-[#0F0] transition-all duration-300">
+                        <h3 className="text-xl font-bold text-[#0F0] mb-2">ACCESS_POINT</h3>
+                        <p className="text-gray-400">Near U2 Donaustadtbrücke</p>
                     </div>
                 </div>
 
+                {/* Map and Gallery */}
                 <div className="space-y-16">
-                    <div className="relative h-[400px] rounded-lg overflow-hidden">
+                    {/* Map */}
+                    <div className="relative h-[400px] border border-gray-800 overflow-hidden">
                         <iframe
                             width="100%"
                             height="100%"
@@ -56,9 +61,10 @@ export default function VenueSection() {
                         />
                     </div>
 
+                    {/* Gallery */}
                     <VenueGallery />
                 </div>
             </div>
         </section>
     );
-} 
+}
