@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import TerminalPrompt from '../terminal/TerminalPrompt';
 import fs from 'fs';
 import path from 'path';
