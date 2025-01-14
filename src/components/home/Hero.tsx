@@ -2,8 +2,21 @@ import Image from 'next/image';
 
 export default function Hero() {
     return (
-        <div className="relative min-h-screen bg-[#1C1C1C] flex items-center">
-            <div className="max-w-6xl mx-auto w-full px-4 flex flex-col lg:flex-row items-center justify-between gap-12 pt-16">
+        <div className="relative min-h-screen flex items-center overflow-hidden">
+            {/* Background Image */}
+            <div className="absolute inset-0">
+                <Image
+                    src="/EthVienna.jpg"
+                    alt="ETH Vienna Background"
+                    fill
+                    className="object-cover"
+                    priority
+                    quality={100}
+                />
+                <div className="absolute inset-0 bg-black/70" /> {/* Dark overlay */}
+            </div>
+
+            <div className="max-w-6xl mx-auto w-full px-4 flex flex-col lg:flex-row items-center justify-between gap-12 pt-16 relative z-10">
                 {/* Left content */}
                 <div className="flex-1 space-y-8">
                     <div>
@@ -32,17 +45,8 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* Right image */}
-                <div className="flex-1 relative w-full max-w-lg">
-                    <Image
-                        src="/Image.png"
-                        alt="Vienna Karlskirche Illustration"
-                        width={600}
-                        height={600}
-                        className="w-full h-auto"
-                        priority
-                    />
-                </div>
+                {/* Right content space - empty but maintaining layout */}
+                <div className="flex-1 relative w-full max-w-lg" />
             </div>
         </div>
     )
