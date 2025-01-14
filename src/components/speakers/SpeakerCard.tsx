@@ -15,28 +15,28 @@ export default function SpeakerCard({ speaker }: SpeakerCardProps) {
         <>
             <div
                 onClick={() => setIsChatOpen(true)}
-                className="group cursor-pointer border border-[#0F0] p-6 
-                         shadow-[0_0_10px_rgba(0,255,0,0.1)] 
+                className="group cursor-pointer border border-transparent hover:border-[#0F0] p-8 
                          hover:shadow-[0_0_15px_rgba(0,255,0,0.2)] 
-                         transition-all duration-300"
+                         transition-all duration-300 bg-black"
             >
-                <div className="relative w-48 h-48 mx-auto mb-4">
-                    <Image
-                        src={speaker.image}
-                        alt={speaker.name}
-                        fill
-                        className="object-cover transition-all duration-300 
-                                 filter grayscale group-hover:grayscale-0 
-                                 group-hover:scale-110"
-                    />
-                </div>
-                <div className="text-center">
-                    <h3 className="text-[#0F0] text-xl font-bold mb-2 glitch-text">
-                        {speaker.name}
-                    </h3>
-                    <p className="text-gray-400">
-                        {speaker.role}
-                    </p>
+                <div className="flex flex-col items-center space-y-4">
+                    <div className="relative w-40 h-40">
+                        <Image
+                            src={speaker.image}
+                            alt={speaker.name}
+                            fill
+                            className="rounded-full object-cover transition-all duration-300 
+                                     filter grayscale group-hover:grayscale-0"
+                        />
+                    </div>
+                    <div className="text-center space-y-2">
+                        <h3 className="text-[#0F0] text-2xl font-bold font-mono">
+                            {speaker.name}
+                        </h3>
+                        <p className="text-gray-400 font-mono">
+                            {speaker.role}
+                        </p>
+                    </div>
                 </div>
             </div>
 
