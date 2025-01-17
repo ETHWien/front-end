@@ -7,8 +7,8 @@ export default function SpeakersSection() {
             <div className="max-w-6xl mx-auto px-4">
                 {/* Section header */}
                 <div className="mb-12">
-                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 glitch-text">
-                        System_Experts
+                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 glitch-text">
+                        root@eth_vienna:~# alsamixer -c Vienna
                     </h2>
                     <p className="text-xl text-[#0F0] max-w-2xl">
                         Loading profiles...

@@ -10,8 +10,8 @@ export default function VenueSection() {
                 {/* Section header */}
                 <div className="mb-12">
 
-                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 glitch-text">
-                        Base_Location
+                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 glitch-text">
+                        root@eth_vienna:~# pwd
                     </h2>
 
                     <p className="text-xl text-[#0F0] max-w-2xl">

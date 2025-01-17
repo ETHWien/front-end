@@ -51,29 +51,22 @@ export default function Footer() {
                                     href={`mailto:${SITE_CONFIG.contact.email}`}
                                     className="text-gray-400 hover:text-[#0F0] transition-colors"
                                 >
-                                    mail@{SITE_CONFIG.contact.email}
+                                    {SITE_CONFIG.contact.email}
                                 </a>
                             </li>
-                            <li>
-                                <a
-                                    href={SITE_CONFIG.contact.social.twitter}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-gray-400 hover:text-[#0F0] transition-colors"
-                                >
-                                    twitter/ethvienna
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href={SITE_CONFIG.contact.social.discord}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-gray-400 hover:text-[#0F0] transition-colors"
-                                >
-                                    discord/ethvienna
-                                </a>
-                            </li>
+                            {Object.entries(SITE_CONFIG.contact.social).map(([platform, url]) => (
+                                <li key={platform}>
+                                    <a
+                                        href={url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-gray-400 hover:text-[#0F0] transition-colors"
+                                    >
+                                        {platform}
+                                    </a>
+                                </li>
+                            ))}
+
                         </ul>
                     </div>
 

@@ -2,59 +2,59 @@ import { Speaker } from "@/types/Speaker";
 
 export const speakers: Speaker[] = [
     {
-        id: "maria-schmidt",
-        name: "Dr. Maria Schmidt",
-        role: "Blockchain Researcher",
-        image: "/speakers/Image1.png",
-        bio: "Leading researcher in blockchain scalability solutions...",
-        expertise: ["Layer 2 Solutions", "ZK-Rollups", "Ethereum Scaling"],
+        id: "wolfgang-mozart",
+        name: "Wolfgang A. Mozart",
+        role: "Classical Composer & Innovator",
+        image: "/speakers/mozart.png",
+        bio: "Pioneering composer who revolutionized classical music in Vienna...",
+        expertise: ["Symphony", "Opera", "Chamber Music"],
         huggingFaceModel: "gpt2",
         predefinedQA: [
             {
-                question: "What are your thoughts on ZK-rollups?",
-                answer: "ZK-rollups are one of the most promising scaling solutions for Ethereum. They bundle multiple transactions into a single proof, significantly reducing gas fees while maintaining security. The mathematical validity proofs ensure trustless verification on-chain."
+                question: "What inspired your Symphony No. 40?",
+                answer: "The Symphony No. 40 in G minor emerged during a period of intense creativity in 1788. It reflects both the elegance of Viennese style and the emotional depth of the Sturm und Drang movement, characterized by its dramatic intensity and minor tonality."
             },
             {
-                question: "How do you see Layer 2 evolving?",
-                answer: "Layer 2 solutions are becoming increasingly sophisticated. We're seeing better interoperability, lower costs, and improved user experience. I expect to see more specialized L2s for specific use cases, while maintaining security through Ethereum's base layer."
+                question: "How did Vienna influence your music?",
+                answer: "Vienna was instrumental in shaping my musical language. The city's rich cultural atmosphere, the presence of great musicians, and the sophisticated audience allowed me to experiment with new forms and push the boundaries of classical composition."
             }
         ]
     },
     {
-        id: "alex-chen",
-        name: "Alex Chen",
-        role: "Smart Contract Auditor",
-        image: "/speakers/Image2.png",
-        bio: "Senior security researcher specializing in smart contract vulnerabilities and audit methodologies.",
-        expertise: ["Smart Contract Security", "DeFi Protocols", "Audit Tools"],
+        id: "ludwig-beethoven",
+        name: "Ludwig van Beethoven",
+        role: "Revolutionary Composer",
+        image: "/speakers/beethoven.png",
+        bio: "Transformative figure who bridged the Classical and Romantic eras in Vienna.",
+        expertise: ["Symphony", "Piano Sonata", "String Quartet"],
         huggingFaceModel: "gpt2",
         predefinedQA: [
             {
-                question: "What are common smart contract vulnerabilities?",
-                answer: "The most frequent vulnerabilities we encounter include reentrancy attacks, flash loan exploits, and access control issues. It's crucial to implement proper checks and follow established security patterns like checks-effects-interactions."
+                question: "Tell us about the Ninth Symphony",
+                answer: "The Ninth Symphony represents humanity's universal brotherhood. Despite my complete deafness during its composition, I envisioned a work that would transcend traditional symphonic boundaries by incorporating voices and Schiller's 'Ode to Joy'."
             },
             {
-                question: "How is AI changing smart contract auditing?",
-                answer: "AI tools are becoming valuable supplements to traditional auditing. They help identify patterns and potential vulnerabilities more quickly, but human expertise is still essential for understanding context and complex attack vectors."
+                question: "How did you revolutionize music in Vienna?",
+                answer: "In Vienna, I expanded the classical forms I inherited from Mozart and Haydn. By emphasizing emotional expression and pushing instrumental capabilities to their limits, I helped establish the foundations of the Romantic era."
             }
         ]
     },
     {
-        id: "sarah-patel",
-        name: "Sarah Patel",
-        role: "DeFi Architect",
-        image: "/speakers/Image3.png",
-        bio: "Pioneer in decentralized finance protocols and tokenomics design.",
-        expertise: ["DeFi Protocol Design", "Tokenomics", "MEV"],
+        id: "johann-strauss",
+        name: "Johann Strauss II",
+        role: "Waltz King of Vienna",
+        image: "/speakers/strauss.png",
+        bio: "Master of the Viennese waltz and light orchestral music.",
+        expertise: ["Waltz", "Operetta", "Light Music"],
         huggingFaceModel: "gpt2",
         predefinedQA: [
             {
-                question: "What's your view on MEV in DeFi?",
-                answer: "MEV is a complex phenomenon that's become integral to DeFi. While some forms can be harmful to users, others contribute to market efficiency. The key is designing protocols that either minimize harmful MEV or democratize access to MEV opportunities."
+                question: "What's the story behind 'The Blue Danube'?",
+                answer: "An der schönen blauen Donau (The Blue Danube) was composed in 1866 during a period of Austrian military defeats. The waltz was intended to lift Viennese spirits and has since become Austria's unofficial national anthem, celebrating the beauty of Vienna and its famous river."
             },
             {
-                question: "How do you approach tokenomics design?",
-                answer: "Effective tokenomics must balance multiple stakeholder interests while ensuring long-term sustainability. I focus on creating value accrual mechanisms, proper incentive alignment, and sustainable emission schedules that support protocol growth."
+                question: "How did you develop the Viennese Waltz?",
+                answer: "I elevated the waltz from a simple ballroom dance to a sophisticated art form. By incorporating complex orchestration and melodic development, I created pieces that were both danceable and suitable for concert performance."
             }
         ]
     }

@@ -1,8 +1,8 @@
 export const SITE_CONFIG = {
-    name: 'ETH Vienna',
+    name: 'ETH_VIENNA',
     website: 'https://ethereum.wien',
     description: 'The biggest Ethereum hackathon in Vienna',
-    date: 'September 15-17, 2025',
+    date: 'September 12-14, 2025',
     venue: {
         name: 'District Living',
         address: 'Donaustadtstraße 45, 1220 Wien, Austria',
@@ -17,8 +17,9 @@ export const SITE_CONFIG = {
     contact: {
         email: 'info@ethereum.wien',
         social: {
-            twitter: 'https://twitter.com/ethvienna',
-            discord: 'https://discord.gg/ethvienna',
+            twitter: 'https://twitter.com/eth_wien',
+            telegram: 'https://t.me/eth_wien',
+            farcaster: 'https://warpcast.com/eth_wien',
         }
     },
 }; 

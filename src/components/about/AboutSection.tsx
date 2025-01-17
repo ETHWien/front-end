@@ -6,7 +6,7 @@ export default function AboutSection() {
                 <div className="mb-12">
 
                     <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 glitch-text">
-                        System_Overview
+                        root@eth_vienna:~# whois ethereum.wien
                     </h2>
 
                     <p className="text-xl text-[#0F0] max-w-2xl">
@@ -25,7 +25,7 @@ export default function AboutSection() {
                         </h3>
                         <div className="space-y-4 text-gray-400">
                             <p>
-                                ETH Vienna is a premier hackathon bringing together developers, innovators,
+                                ETH_VIENNA is a premier hackathon bringing together developers, innovators,
                                 and blockchain enthusiasts to build the future of decentralized technology.
                             </p>
                             <p>
@@ -39,7 +39,7 @@ export default function AboutSection() {
                     {/* What to Expect */}
                     <div className="border border-gray-800 p-8 hover:border-[#0F0] transition-all duration-300">
                         <h3 className="text-2xl font-bold text-[#0F0] mb-6">
-                            $ ls event_features/
+                            $  cat event_features/*
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             {[

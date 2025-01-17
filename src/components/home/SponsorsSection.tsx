@@ -41,8 +41,8 @@ export default function SponsorsSection() {
             <div className="max-w-6xl mx-auto px-4">
                 {/* Section header */}
                 <div className="mb-12">
-                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 glitch-text">
-                        Network_Partners
+                    <h2 className="text-3xl sm:text-3xl font-bold text-white mb-6 glitch-text">
+                        root@eth_vienna:/etc/apt/sources.list.d/
                     </h2>
 
                     <p className="text-xl text-[#0F0] max-w-2xl">
@@ -95,12 +95,11 @@ export default function SponsorsSection() {
                 {/* Become a sponsor CTA */}
                 <div className="mt-16 text-center">
                     <div className="inline-flex flex-col items-center">
-                        <span className="text-[#0F0] mb-4">$ ./join-alliance.sh</span>
                         <a
                             href="/sponsors"
-                            className="inline-block border border-[#0F0] text-[#0F0] px-8 py-3 hover:bg-[#0F0] hover:text-black transition-colors"
+                            className="inline-block border border-[#0F0] text-[#0F0] px-8 py-3 hover:bg-[#0F0] hover:text-black transition-colors font-mono"
                         >
-                            Become_Partner
+                            ./join-alliance.sh
                         </a>
                     </div>
                 </div>
