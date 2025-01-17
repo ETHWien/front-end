@@ -143,7 +143,7 @@ export default function TerminalPrompt() {
                     router.push('/' + normalizedDir.toLowerCase());
                     setHistory(prev => [...prev, {
                         type: 'output',
-                        content: `Changed directory to /${normalizedDir}`
+                        content: `Changed directory to /#{normalizedDir}`
                     }]);
                 } else {
                     setHistory(prev => [...prev, {
@@ -205,7 +205,7 @@ export default function TerminalPrompt() {
                     <div key={i}>
                         {entry.type === 'input' ? (
                             <div className="flex items-center gap-2">
-                                <span className="text-[#0F0]">root@eth_vienna:{currentDir}$</span>
+                                <span className="text-[#0F0]">root@eth_vienna:{currentDir}#</span>
                                 <span className="text-white">{entry.content}</span>
                             </div>
                         ) : (
@@ -220,7 +220,7 @@ export default function TerminalPrompt() {
 
             <form onSubmit={handleSubmit} className="relative">
                 <div className="flex items-center gap-2">
-                    <span className="text-[#0F0]">root@eth_vienna:{currentDir}$</span>
+                    <span className="text-[#0F0]">root@eth_vienna:{currentDir}#</span>
                     <div className="flex-1 relative">
                         <input
                             type="text"

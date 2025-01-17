@@ -21,7 +21,7 @@ export default function AboutSection() {
                     {/* Mission */}
                     <div className="border border-gray-800 p-8 hover:border-[#0F0] transition-all duration-300">
                         <h3 className="text-2xl font-bold text-[#0F0] mb-6">
-                            $ cat mission.txt
+                            # cat mission.txt
                         </h3>
                         <div className="space-y-4 text-gray-400">
                             <p>
@@ -39,7 +39,7 @@ export default function AboutSection() {
                     {/* What to Expect */}
                     <div className="border border-gray-800 p-8 hover:border-[#0F0] transition-all duration-300">
                         <h3 className="text-2xl font-bold text-[#0F0] mb-6">
-                            $  cat event_features/*
+                            # cat event_features/*
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             {[
@@ -75,7 +75,7 @@ export default function AboutSection() {
                     {/* Why Vienna */}
                     <div className="border border-gray-800 p-8 hover:border-[#0F0] transition-all duration-300">
                         <h3 className="text-2xl font-bold text-[#0F0] mb-6">
-                            $ cat why_vienna.md
+                            # cat why_vienna.md
                         </h3>
                         <div className="space-y-4 text-gray-400">
                             <p>

@@ -30,7 +30,7 @@ export default function Navigation() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            <span className="text-[#0F0]">$</span>
+            <span className="text-[#0F0]">#</span>
             <Link href="/" className="text-[#0F0] font-mono text-lg">
               ETH_VIENNA
             </Link>
