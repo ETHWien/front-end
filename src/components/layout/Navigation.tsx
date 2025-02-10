@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { SITE_CONFIG } from '@/constants';
 
 const NAV_ITEMS = [
   { path: '/about', label: 'About' },
@@ -32,7 +33,7 @@ export default function Navigation() {
           <div className="flex items-center gap-2">
             <span className="text-[#0F0]">#</span>
             <Link href="/" className="text-[#0F0] font-mono text-lg">
-              ETH_VIENNA
+              {SITE_CONFIG.name}
             </Link>
           </div>
 

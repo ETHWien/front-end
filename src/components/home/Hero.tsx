@@ -1,7 +1,7 @@
 import TerminalPrompt from '../terminal/TerminalPrompt';
 import fs from 'fs';
 import path from 'path';
-
+import { SITE_CONFIG } from '@/constants';
 // Read ASCII art at build time
 const asciiArt = fs.readFileSync(path.join(process.cwd(), 'public/ascii-art.txt'), 'utf8');
 
@@ -20,7 +20,7 @@ export default function Hero() {
                 <div className="space-y-8 max-w-6xl">
                     <div>
                         <h1 className="text-5xl sm:text-7xl font-bold text-white mb-6 glitch-text">
-                            ETH_VIENNA
+                            {SITE_CONFIG.name}
                             <span className="text-[#0F0]">_2025</span>
                         </h1>
                         <p className="text-xl text-gray-400">

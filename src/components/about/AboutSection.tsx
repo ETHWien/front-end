@@ -1,3 +1,5 @@
+import { SITE_CONFIG } from "@/constants";
+
 export default function AboutSection() {
     return (
         <section className="bg-black py-12 font-mono">
@@ -25,7 +27,7 @@ export default function AboutSection() {
                         </h3>
                         <div className="space-y-4 text-gray-400">
                             <p>
-                                ETH_VIENNA is a premier hackathon bringing together developers, innovators,
+                                {SITE_CONFIG.name} is a premier hackathon bringing together developers, innovators,
                                 and blockchain enthusiasts to build the future of decentralized technology.
                             </p>
                             <p>

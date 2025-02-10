@@ -28,15 +28,15 @@ const SUGGESTIONS = [
     { command: 'cd ..', response: 'Returning to parent directory...' },
 
     // Basic event info
-    { command: 'what is ETH_VIENNA', response: 'ETH_VIENNA is a premier Ethereum hackathon bringing together developers, innovators, and blockchain enthusiasts.' },
-    { command: 'when is ETH_VIENNA', response: `ETH_VIENNA 2025 will take place from ${SITE_CONFIG.date}.` },
-    { command: 'where is ETH_VIENNA', response: 'ETH_VIENNA is hosted at District Living in Vienna, Austria.' },
+    { command: `what is ${SITE_CONFIG.name}`, response: `${SITE_CONFIG.name} is a premier Ethereum hackathon bringing together developers, innovators, and blockchain enthusiasts.` },
+    { command: `when is ${SITE_CONFIG.name}`, response: `${SITE_CONFIG.name} 2025 will take place from ${SITE_CONFIG.date}.` },
+    { command: `where is ${SITE_CONFIG.name}`, response: `${SITE_CONFIG.name} is hosted at District Living in Vienna, Austria.` },
     { command: 'how to participate', response: 'To participate, register through ./register.sh and join us for 36 hours of hacking!' },
 
     // Navigation commands
     { command: 'pwd', response: '/home/hacker/District_Living/Vienna/Austria' },
     { command: 'ls', response: 'about  schedule  speakers  sponsors  location  partners  register.sh  join-alliance.sh' },
-    { command: 'whoami', response: 'ETH Vienna Hacker - Building the future of Web3 in the heart of Europe' },
+    { command: 'whoami', response: 'ETH Wien Hacker - Building the future of Web3 in the heart of Europe' },
 
     // Section specific commands
     { command: 'cat /etc/cron.d/schedule', response: 'Loading hackathon schedule...\nDay 1: Opening ceremony, team formation\nDay 2: Hacking, workshops\nDay 3: Project submission, demos, awards' },
@@ -49,13 +49,13 @@ const SUGGESTIONS = [
     { command: 'show sponsors', response: 'View our network partners at /sponsors' },
 
     // System commands
-    { command: 'uname -a', response: 'ETH_VIENNA Hackathon System v2025.1-vienna running on Web3 kernel' },
+    { command: 'uname -a', response: `${SITE_CONFIG.name} Hackathon System v2025.1-vienna running on Web3 kernel` },
     { command: 'df -h', response: 'Available space for ideas: ∞\nInnovation capacity: 100%\nCreativity buffer: Unlimited' },
     { command: 'top', response: 'Top processes:\n1. Innovation Engine\n2. Collaboration Protocol\n3. Creativity Daemon\n4. Blockchain Syncing' },
 
     // Help and utilities
-    { command: 'man ETH_VIENNA', response: 'ETH_VIENNA(1)\n\nNAME\n    ETH_VIENNA - Premier Ethereum hackathon in Vienna\n\nDESCRIPTION\n    A 36-hour hackathon bringing together developers,\n    innovators, and blockchain enthusiasts.' },
-    { command: 'help', response: 'Available commands:\n- what is ETH_VIENNA\n- when is ETH_VIENNA\n- where is ETH_VIENNA\n- how to participate\n- pwd\n- ls\n- whoami\n- cat /etc/cron.d/schedule\n- alsamixer -c Vienna\n- cat /etc/NetworkManager/system-connections\n- ./register.sh\n- ./join-alliance.sh\n- show sponsors\n- uname -a\n- df -h\n- top\n- man ETH_VIENNA\n- clear' },
+    { command: `man ${SITE_CONFIG.name}`, response: `${SITE_CONFIG.name}(1)\n\nNAME\n    ${SITE_CONFIG.name} - Premier Ethereum hackathon in Vienna\n\nDESCRIPTION\n    A 36-hour hackathon bringing together developers,\n    innovators, and blockchain enthusiasts.` },
+    { command: 'help', response: `Available commands:\n- what is ${SITE_CONFIG.name}\n- when is ${SITE_CONFIG.name}\n- where is ${SITE_CONFIG.name}\n- how to participate\n- pwd\n- ls\n- whoami\n- cat /etc/cron.d/schedule\n- alsamixer -c Vienna\n- cat /etc/NetworkManager/system-connections\n- ./register.sh\n- ./join-alliance.sh\n- show sponsors\n- uname -a\n- df -h\n- top\n- man ${SITE_CONFIG.name}\n- clear` },
     { command: 'clear', response: '' },
 ];
 
