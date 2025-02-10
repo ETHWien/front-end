@@ -2,7 +2,7 @@
 
 import { SITE_CONFIG } from '@/constants';
 import VenueGallery from './VenueGallery';
-
+import PS1 from '../terminal/PS1';
 export default function VenueSection() {
     return (
         <section className="bg-black py-12 font-mono">
@@ -10,9 +10,7 @@ export default function VenueSection() {
                 {/* Section header */}
                 <div className="mb-12">
 
-                    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 glitch-text">
-                        root@eth_vienna:~# pwd
-                    </h2>
+                    <PS1 currentDir="~" customCommand="pwd" />
 
                     <p className="text-xl text-[#0F0] max-w-2xl">
                         Initializing coordinates...

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Sponsor, SponsorTier } from '@/types/sponsor';
-
+import PS1 from '../terminal/PS1';
 const SPONSORS: Sponsor[] = [
 ];
 
@@ -41,9 +41,7 @@ export default function SponsorsSection() {
             <div className="max-w-6xl mx-auto px-4">
                 {/* Section header */}
                 <div className="mb-12">
-                    <h2 className="text-3xl sm:text-3xl font-bold text-white mb-6 glitch-text">
-                        root@eth_vienna:/etc/apt/sources.list.d/
-                    </h2>
+                    <PS1 currentDir="~" customCommand="cat /etc/apt/sources.list.d/" />
 
                     <p className="text-xl text-[#0F0] max-w-2xl">
                         Loading alliance data...

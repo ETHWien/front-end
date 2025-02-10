@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react';
 import { ScheduleEvent } from '@/types/schedule';
+import PS1 from '../terminal/PS1';
 
 const SCHEDULE_EVENTS: ScheduleEvent[] = [
     {
@@ -38,10 +39,7 @@ export default function ScheduleSection() {
             <div className="max-w-6xl mx-auto px-4">
                 {/* Section header with terminal style */}
                 <div className="mb-12">
-
-                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 glitch-text">
-                        root@eth_vienna:/etc/cron.d
-                    </h2>
+                    <PS1 currentDir="~" customCommand="cat /etc/cron.d/schedule" />
 
                     <p className="text-xl text-[#0F0] max-w-2xl font-mono">
                         Executing program sequence...

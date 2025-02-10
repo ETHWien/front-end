@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { SITE_CONFIG } from '@/constants';
 import SteamLocomotive from './SteamLocomotive';
+import PS1 from './PS1';
 
 type VirtualDirPath = '/' | '/about' | '/schedule' | '/speakers' | '/sponsors' | '/location' | '/partners';
 
@@ -205,7 +206,7 @@ export default function TerminalPrompt() {
                     <div key={i}>
                         {entry.type === 'input' ? (
                             <div className="flex items-center gap-2">
-                                <span className="text-[#0F0]">root@eth_vienna:{currentDir}#</span>
+                                <PS1 currentDir={currentDir} />
                                 <span className="text-white">{entry.content}</span>
                             </div>
                         ) : (
@@ -220,7 +221,7 @@ export default function TerminalPrompt() {
 
             <form onSubmit={handleSubmit} className="relative">
                 <div className="flex items-center gap-2">
-                    <span className="text-[#0F0]">root@eth_vienna:{currentDir}#</span>
+                    <PS1 currentDir={currentDir} />
                     <div className="flex-1 relative">
                         <input
                             type="text"
