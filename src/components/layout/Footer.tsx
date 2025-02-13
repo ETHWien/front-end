@@ -12,7 +12,7 @@ export default function Footer() {
                 </div>
 
                 {/* Footer content */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-8 pb-16 border-b border-[#0F0]/30">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8 pb-16 border-b border-[#0F0]/30">
                     <div>
                         <h3 className="text-xl font-bold text-[#0F0] mb-4">
                             {SITE_CONFIG.name}
