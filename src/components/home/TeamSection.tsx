@@ -1,4 +1,4 @@
-import { SITE_CONFIG } from '@/constants';
+'use client';
 import SpeakerCard from '../speakers/SpeakerCard';
 import PS1 from '../terminal/PS1';
 
