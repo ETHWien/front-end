@@ -27,7 +27,8 @@ export default function SpeakerCard({ speaker }: SpeakerCardProps) {
                                 loop
                                 muted
                                 playsInline
-                                className="rounded-full object-cover"
+                                className="rounded-full object-cover transition-all duration-300 
+                                     filter grayscale group-hover:grayscale-0"
                             >
                                 <source src={speaker.image} type="video/mp4" />
                             </video>
@@ -36,7 +37,8 @@ export default function SpeakerCard({ speaker }: SpeakerCardProps) {
                                 src={speaker.image}
                                 alt={speaker.name}
                                 fill
-                                className="rounded-full object-cover"
+                                className="rounded-full object-cover transition-all duration-300 
+                                     filter grayscale group-hover:grayscale-0"
                                 sizes="(max-width: 128px) 100vw, 128px"
                             />
                         )}
