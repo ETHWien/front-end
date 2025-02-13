@@ -33,7 +33,7 @@ export default function Footer() {
                             ].map(([path, label]) => (
                                 <li key={path}>
                                     <a
-                                        href={`/${path}`}
+                                        href={`#${path}`}
                                         className="text-gray-400 hover:text-[#0F0] transition-colors"
                                     >
                                         /{label}
