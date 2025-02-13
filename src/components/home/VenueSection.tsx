@@ -9,7 +9,7 @@ export default function VenueSection() {
             <div className="max-w-6xl mx-auto px-4">
                 {/* Section header */}
                 <div className="mb-12">
-                    <PS1 currentDir="~" customCommand="pwd" className="text-3xl sm:text-4xl font-bold text-white mb-6 glitch-text" />
+                    <PS1 currentDir="~" customCommand="pwd" className="text-2xl sm:text-3xl font-bold text-white mb-6 glitch-text" />
                 </div>
 
                 {/* Info boxes */}

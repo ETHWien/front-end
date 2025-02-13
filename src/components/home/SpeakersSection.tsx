@@ -7,7 +7,7 @@ export default function SpeakersSection() {
         <section className="bg-black py-12 font-mono">
             <div className="max-w-6xl mx-auto px-4">
                 <div className="mb-12">
-                    <PS1 currentDir="~" customCommand="alsamixer -c Vienna" className="text-3xl sm:text-4xl font-bold text-white mb-6 glitch-text" />
+                    <PS1 currentDir="~" customCommand="alsamixer -c Vienna" className="text-2xl sm:text-3xl font-bold text-white mb-6 glitch-text" />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {speakers.map((speaker) => (
