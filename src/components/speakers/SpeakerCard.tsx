@@ -21,13 +21,25 @@ export default function SpeakerCard({ speaker }: SpeakerCardProps) {
             >
                 <div className="flex flex-col items-center space-y-4">
                     <div className="relative w-40 h-40">
-                        <Image
-                            src={speaker.image}
-                            alt={speaker.name}
-                            fill
-                            className="rounded-full object-cover transition-all duration-300 
-                                     filter grayscale group-hover:grayscale-0"
-                        />
+
+                        {speaker.image.includes('.mp4') ? (
+                            <video
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className="w-full h-full object-cover rounded-full"
+                            >
+                                <source src={speaker.image} type="video/mp4" />
+                            </video>
+                        ) : (
+                            <img
+                                src={speaker.image}
+                                alt={speaker.name}
+                                className="w-full h-full object-cover rounded-full"
+                            />
+                        )}
+
                     </div>
                     <div className="text-center space-y-2">
                         <h3 className="text-[#0F0] text-2xl font-bold font-mono">

@@ -4,6 +4,8 @@ export const SITE_CONFIG = {
     domain: 'ethereum.wien',
     description: 'The biggest Ethereum hackathon in Vienna',
     date: 'September 12-14, 2025',
+    dateTime: new Date('2025-09-12T00:00:00Z'),
+    registrationOpen: new Date('2025-08-12T00:00:00Z'),
     venue: {
         name: 'District Living',
         address: 'Donaustadtstraße 45, 1220 Wien, Austria',

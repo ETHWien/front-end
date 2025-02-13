@@ -141,10 +141,10 @@ export default function TerminalPrompt() {
                 const normalizedDir = targetDir.charAt(0).toUpperCase() + targetDir.slice(1).toLowerCase();
                 if (VIRTUAL_DIRS['/'].includes(normalizedDir)) {
                     setCurrentDir('/' + normalizedDir);
-                    router.push('/' + normalizedDir.toLowerCase());
+                    router.push('#' + normalizedDir.toLowerCase());
                     setHistory(prev => [...prev, {
                         type: 'output',
-                        content: `Changed directory to /#{normalizedDir}`
+                        content: `Changed directory to /${normalizedDir}`
                     }]);
                 } else {
                     setHistory(prev => [...prev, {
@@ -170,27 +170,32 @@ export default function TerminalPrompt() {
             // Handle navigation commands
             switch (command) {
                 case 'whoami':
+                    router.push('#about');
+                    break;
+                case 'when is ETH_WIEN':
+                    router.push('#schedule');
+                    break;
                 case 'whois ethereum.wien':
-                    router.push('/about');
+                    router.push('#about');
                     break;
                 case './register.sh':
-                    router.push('/register');
+                    router.push('#register');
                     break;
                 case './join-alliance.sh':
                 case 'show sponsors':
-                    router.push('/sponsors');
+                    router.push('#sponsors');
                     break;
                 case 'cat /etc/cron.d/schedule':
-                    router.push('/schedule');
+                    router.push('#schedule');
                     break;
                 case 'alsamixer -c vienna':
-                    router.push('/speakers');
+                    router.push('#speakers');
                     break;
                 case 'cat /etc/networkmanager/system-connections':
-                    router.push('/partners');
+                    router.push('#partners');
                     break;
                 case 'pwd':
-                    router.push('/location');
+                    router.push('#location');
                     break;
             }
         }
@@ -206,7 +211,7 @@ export default function TerminalPrompt() {
                     <div key={i}>
                         {entry.type === 'input' ? (
                             <div className="flex items-center gap-2">
-                                <PS1 currentDir={currentDir} />
+                                <PS1 currentDir={currentDir} className="text-[#0F0]" />
                                 <span className="text-white">{entry.content}</span>
                             </div>
                         ) : (

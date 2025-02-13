@@ -1,30 +1,37 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
-import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
 import { SITE_CONFIG } from '@/constants';
 
-const NAV_ITEMS = [
-  { path: '/about', label: 'About' },
-  { path: '/schedule', label: 'Schedule' },
-  { path: '/sponsors', label: 'Sponsors' },
-];
+const formatTime = (seconds: number): string => {
+  if (seconds <= 0) return '00:00:00';
+
+  const days = Math.floor(seconds / 86400);
+  const hours = Math.floor((seconds % 86400) / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const secs = Math.floor(seconds % 60);
+
+  return `${days > 0 ? `${days} days, ` : ''}${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+};
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
+  const [timeRemaining, setTimeRemaining] = useState((SITE_CONFIG.dateTime.getTime() - new Date().getTime()) / 1000); // 36 hours in seconds
 
-  // Don't show register button on register page
-  const showRegister = pathname !== '/register';
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeRemaining((prev) => {
+        if (prev <= 0) {
+          clearInterval(timer);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
 
-  // Helper to determine if a path is active
-  const isActive = (path: string) => {
-    if (!pathname) return false;
-    if (path === '/' && pathname === '/') return true;
-    if (path !== '/' && pathname.startsWith(path)) return true;
-    return false;
-  };
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <nav className="fixed w-full bg-black/90 backdrop-blur-sm z-50 border-b border-[#0F0]/30 font-mono">
@@ -40,29 +47,9 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="flex items-center gap-8">
-              {NAV_ITEMS.map(({ path, label }) => (
-                <Link
-                  key={path}
-                  href={path}
-                  className={`transition-colors ${isActive(path)
-                    ? 'text-[#0F0] border border-[#0F0] px-4 py-2'
-                    : 'text-gray-400 hover:text-[#0F0]'
-                    }`}
-                >
-                  {`/${label}`}
-                </Link>
-              ))}
-              {showRegister && (
-                <Link
-                  href="/register"
-                  className={`px-4 py-2 transition-colors ${pathname === '/'
-                    ? 'border border-[#0F0] text-[#0F0] hover:bg-[#0F0] hover:text-black'
-                    : 'border border-gray-800 text-gray-400 hover:border-[#0F0] hover:text-[#0F0]'
-                    }`}
-                >
-                  ./register.sh
-                </Link>
-              )}
+              <div className="text-[#0F0] font-mono">
+                <span>{formatTime(timeRemaining)}</span>
+              </div>
             </div>
           </div>
 
@@ -86,31 +73,9 @@ export default function Navigation() {
       {/* Mobile Navigation */}
       <div className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-black border-t border-[#0F0]/30`}>
         <div className="px-4 py-4 space-y-3">
-          {NAV_ITEMS.map(({ path, label }) => (
-            <Link
-              key={path}
-              href={path}
-              className={`block transition-colors ${isActive(path)
-                ? 'text-[#0F0] border border-[#0F0] px-4 py-2'
-                : 'text-gray-400 hover:text-[#0F0]'
-                }`}
-              onClick={() => setIsOpen(false)}
-            >
-              {`/${label}`}
-            </Link>
-          ))}
-          {showRegister && (
-            <Link
-              href="/register"
-              className={`block px-4 py-2 text-center transition-colors ${pathname === '/'
-                ? 'border border-[#0F0] text-[#0F0] hover:bg-[#0F0] hover:text-black'
-                : 'border border-gray-800 text-gray-400 hover:border-[#0F0] hover:text-[#0F0]'
-                }`}
-              onClick={() => setIsOpen(false)}
-            >
-              ./register.sh
-            </Link>
-          )}
+          <div className="text-[#0F0] font-mono">
+            <span>{formatTime(timeRemaining)}</span>
+          </div>
         </div>
       </div>
     </nav>

@@ -37,17 +37,11 @@ export default function SponsorsSection() {
     }, {} as Record<SponsorTier, Sponsor[]>);
 
     return (
-        <section className="bg-black py-12 font-mono">
+        <section className="bg-black py-12 font-mono" id="sponsors">
             <div className="max-w-6xl mx-auto px-4">
                 {/* Section header */}
                 <div className="mb-12">
-                    <PS1 currentDir="~" customCommand="cat /etc/apt/sources.list.d/" />
-
-                    <p className="text-xl text-[#0F0] max-w-2xl">
-                        Loading alliance data...
-                        <br />
-                        Establishing connections...
-                    </p>
+                    <PS1 currentDir="~" customCommand="cat /etc/apt/sources.list.d/" className="text-3xl sm:text-4xl font-bold text-white mb-6 glitch-text" />
                 </div>
 
                 {/* Sponsors grid by tier */}

@@ -5,18 +5,11 @@ import VenueGallery from './VenueGallery';
 import PS1 from '../terminal/PS1';
 export default function VenueSection() {
     return (
-        <section className="bg-black py-12 font-mono">
+        <section className="bg-black py-12 font-mono" id="venue">
             <div className="max-w-6xl mx-auto px-4">
                 {/* Section header */}
                 <div className="mb-12">
-
-                    <PS1 currentDir="~" customCommand="pwd" />
-
-                    <p className="text-xl text-[#0F0] max-w-2xl">
-                        Initializing coordinates...
-                        <br />
-                        Loading venue specifications...
-                    </p>
+                    <PS1 currentDir="~" customCommand="pwd" className="text-3xl sm:text-4xl font-bold text-white mb-6 glitch-text" />
                 </div>
 
                 {/* Info boxes */}

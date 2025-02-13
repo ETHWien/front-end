@@ -7,7 +7,7 @@ const asciiArt = fs.readFileSync(path.join(process.cwd(), 'public/ascii-art.txt'
 
 export default function Hero() {
     return (
-        <div className="relative min-h-screen flex items-center overflow-hidden font-mono">
+        <section className="relative min-h-screen flex items-center overflow-hidden font-mono" id="hero">
 
             {/* ASCII Art Background */}
             <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none overflow-hidden">
@@ -42,7 +42,7 @@ export default function Hero() {
                             ./register.sh
                         </a>
                         <a
-                            href="/about"
+                            href="#about"
                             className="inline-block border border-gray-800 text-gray-400 px-8 py-3 hover:border-[#0F0] hover:text-[#0F0] transition-colors font-mono"
                         >
                             --help
@@ -50,6 +50,6 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

@@ -1,21 +1,13 @@
 import { SITE_CONFIG } from "@/constants";
+import PS1 from "../terminal/PS1";
 
 export default function AboutSection() {
     return (
-        <section className="bg-black py-12 font-mono">
+        <section className="bg-black py-12 font-mono" id="about">
             <div className="max-w-6xl mx-auto px-4">
                 {/* Section header */}
                 <div className="mb-12">
-
-                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 glitch-text">
-                        root@eth_vienna:~# whois ethereum.wien
-                    </h2>
-
-                    <p className="text-xl text-[#0F0] max-w-2xl">
-                        Loading mission parameters...
-                        <br />
-                        Accessing core objectives...
-                    </p>
+                    <PS1 currentDir="~" customCommand={`whois ${SITE_CONFIG.domain}`} className="text-3xl sm:text-4xl font-bold text-white mb-6 glitch-text" />
                 </div>
 
                 {/* Content sections */}
@@ -91,27 +83,6 @@ export default function AboutSection() {
                                 advancement makes it an ideal location for fostering the next generation
                                 of blockchain innovations.
                             </p>
-                        </div>
-                    </div>
-
-                    {/* Call to Action */}
-                    <div className="text-center space-y-6">
-                        <p className="text-[#0F0] text-lg">
-                            Ready to join the revolution?
-                        </p>
-                        <div className="flex justify-center gap-4">
-                            <a
-                                href="/register"
-                                className="border border-[#0F0] text-[#0F0] px-8 py-3 hover:bg-[#0F0] hover:text-black transition-colors"
-                            >
-                                ./register.sh
-                            </a>
-                            <a
-                                href="/schedule"
-                                className="border border-gray-800 text-gray-400 px-8 py-3 hover:border-[#0F0] hover:text-[#0F0] transition-colors"
-                            >
-                                view_schedule --details
-                            </a>
                         </div>
                     </div>
                 </div>

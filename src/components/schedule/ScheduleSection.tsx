@@ -4,51 +4,29 @@ import { ScheduleEvent } from '@/types/schedule';
 import PS1 from '../terminal/PS1';
 
 const SCHEDULE_EVENTS: ScheduleEvent[] = [
-    {
-        title: 'Registration & Welcome Coffee',
-        type: 'other',
-        time: '09:00 - 10:00',
-        description: 'Pick up your badge and enjoy morning refreshments',
-        location: 'Main Hall',
-        day: 1
-    },
-    {
-        title: 'Opening Ceremony',
-        type: 'talk',
-        time: '10:00 - 11:00',
-        description: 'Welcome address and hackathon kickoff',
-        location: 'Main Stage',
-        day: 1
-    },
-    {
-        title: 'Team Formation & Ideation',
-        type: 'other',
-        time: '11:00 - 12:30',
-        description: 'Find your team and brainstorm project ideas',
-        location: 'Workshop Areas',
-        day: 1
-    },
-    // Add more events...
+    // {
+    //     title: 'Registration & Welcome Coffee',
+    //     type: 'other',
+    //     time: '09:00 - 10:00',
+    //     description: 'Pick up your badge and enjoy morning refreshments',
+    //     location: 'Main Hall',
+    //     day: 1
+    // },
 ];
 
 export default function ScheduleSection() {
     const [selectedDay, setSelectedDay] = useState<1 | 2 | 3>(1);
 
     return (
-        <section className="bg-black py-12 font-mono">
+        <section className="bg-black py-12 font-mono" id="schedule">
             <div className="max-w-6xl mx-auto px-4">
-                {/* Section header with terminal style */}
                 <div className="mb-12">
-                    <PS1 currentDir="~" customCommand="cat /etc/cron.d/schedule" />
-
-                    <p className="text-xl text-[#0F0] max-w-2xl font-mono">
-                        Executing program sequence...
-                    </p>
+                    <PS1 currentDir="~" customCommand="crontab -l" className="text-3xl sm:text-4xl font-bold text-white mb-6 glitch-text" />
                 </div>
 
                 {/* Day selector with terminal style */}
                 <div className="flex gap-4 mb-12">
-                    {[1, 2, 3].map((day) => (
+                    {[1, 2].map((day) => (
                         <button
                             key={day}
                             onClick={() => setSelectedDay(day as 1 | 2 | 3)}

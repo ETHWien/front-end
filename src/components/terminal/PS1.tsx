@@ -5,13 +5,13 @@ import { SITE_CONFIG } from '@/constants';
 interface PS1Props {
     currentDir?: string;
     customCommand?: string;
+    className?: string;
 }
 
-export default function PS1({ currentDir = '~', customCommand = '' }: PS1Props) {
-    const defaultPrompt = `root@${SITE_CONFIG.domain}:${currentDir}# ${customCommand ? customCommand : ''}`;
-
+export default function PS1({ currentDir = '~', customCommand = '', className = 'text-[#0F0]' }: PS1Props) {
+    const defaultPrompt = `root@${SITE_CONFIG.domain}:${currentDir}# ${customCommand}`;
     return (
-        <span className="text-[#0F0]">
+        <span className={`${className}`}>
             {defaultPrompt}
         </span>
     );
