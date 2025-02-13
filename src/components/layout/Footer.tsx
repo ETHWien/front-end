@@ -70,7 +70,7 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    <div>
+                    {/* <div>
                         <h4 className="text-lg font-bold text-[#0F0] mb-4">Subscribe</h4>
                         <form className="space-y-3">
                             <input
@@ -85,7 +85,7 @@ export default function Footer() {
                                 ./subscribe.sh
                             </button>
                         </form>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Footer bottom */}
