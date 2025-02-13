@@ -19,7 +19,7 @@ export default function Hero() {
             <div className="max-w-6xl mx-auto w-full px-4 relative z-10">
                 <div className="space-y-8 max-w-6xl">
                     <div>
-                        <h1 className="text-5xl sm:text-7xl font-bold text-white mb-6 glitch-text">
+                        <h1 className="text-4xl sm:text-8xl font-bold text-white mb-6 glitch-text">
                             {SITE_CONFIG.name}
                             <span className="text-[#0F0]">_2025</span>
                         </h1>
