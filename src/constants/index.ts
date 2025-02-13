@@ -1,6 +1,7 @@
 export const SITE_CONFIG = {
     name: 'ETH_WIEN',
     website: 'https://ethereum.wien',
+    organization: 'ETHAlps',
     domain: 'ethereum.wien',
     description: 'The biggest Ethereum hackathon in Vienna',
     date: 'September 12-14, 2025',

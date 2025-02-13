@@ -91,7 +91,7 @@ export default function Footer() {
                 {/* Footer bottom */}
                 <div className="pt-8 text-center text-gray-400">
                     <p>
-                        © {new Date().getFullYear()} {SITE_CONFIG.name} | All_Rights_Reserved
+                        © {new Date().getFullYear()} {SITE_CONFIG.organization} | All_Rights_Reserved
                     </p>
                     <a
                         href={SITE_CONFIG.website}
