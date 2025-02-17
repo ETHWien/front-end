@@ -24,9 +24,10 @@ export default function Hero() {
                             <span className="text-[#0F0]">_2025</span>
                         </h1>
                         <p className="text-xl text-gray-400">
-                            Join the most innovative Ethereum hackathon in Vienna.
+                            Join the most innovative Ethereum hackathon in Vienna on {SITE_CONFIG.date}.
                             36 hours of coding, learning, and building the future of Web3.
                         </p>
+
                     </div>
 
                     {/* Terminal Section */}
@@ -36,7 +37,7 @@ export default function Hero() {
 
                     <div className="flex gap-4">
                         <a
-                            href="/register"
+                            href={SITE_CONFIG.registerUrl}
                             className="inline-block border border-[#0F0] text-[#0F0] px-8 py-3 hover:bg-[#0F0] hover:text-black transition-colors font-mono"
                         >
                             ./register.sh

@@ -5,7 +5,7 @@ import PS1 from '../terminal/PS1';
 
 import { Speaker } from "@/types/Speaker";
 
-export const speakers: Speaker[] = [
+export const teamMembers: Speaker[] = [
     {
         id: "rex",
         name: "Rex",
@@ -26,21 +26,21 @@ export const speakers: Speaker[] = [
         ]
     },
     {
-        id: "shazam",
-        name: "Shazam",
+        id: "deepshikha",
+        name: "Deepshikha",
         role: "Co-Founder",
-        image: "/team/shazam.mp4",
-        bio: "Pioneering composer who revolutionized classical music in Vienna...",
-        expertise: ["Symphony", "Opera", "Chamber Music"],
+        image: "/team/deepshikha.jpg",
+        bio: "Deepshikha is the co-founder of the event. She is responsible for the overall vision and direction of the event.",
+        expertise: ["Symphony", "Piano Sonata", "String Quartet"],
         huggingFaceModel: "gpt2",
         predefinedQA: [
             {
-                question: "What inspired your Symphony No. 40?",
-                answer: "The Symphony No. 40 in G minor emerged during a period of intense creativity in 1788. It reflects both the elegance of Viennese style and the emotional depth of the Sturm und Drang movement, characterized by its dramatic intensity and minor tonality."
+                question: "Tell us about the Ninth Symphony",
+                answer: "The Ninth Symphony represents humanity's universal brotherhood. Despite my complete deafness during its composition, I envisioned a work that would transcend traditional symphonic boundaries by incorporating voices and Schiller's 'Ode to Joy'."
             },
             {
-                question: "How did Vienna influence your music?",
-                answer: "Vienna was instrumental in shaping my musical language. The city's rich cultural atmosphere, the presence of great musicians, and the sophisticated audience allowed me to experiment with new forms and push the boundaries of classical composition."
+                question: "How did you revolutionize music in Vienna?",
+                answer: "In Vienna, I expanded the classical forms I inherited from Mozart and Haydn. By emphasizing emotional expression and pushing instrumental capabilities to their limits, I helped establish the foundations of the Romantic era."
             }
         ]
     },
@@ -62,27 +62,28 @@ export const speakers: Speaker[] = [
                 answer: "In Vienna, I expanded the classical forms I inherited from Mozart and Haydn. By emphasizing emotional expression and pushing instrumental capabilities to their limits, I helped establish the foundations of the Romantic era."
             }
         ]
-    }, {
-        id: "deepshikha",
-        name: "Deepshikha",
-        role: "Co-Founder",
-        image: "/team/deepshikha.jpg",
-        bio: "Deepshikha is the co-founder of the event. She is responsible for the overall vision and direction of the event.",
-        expertise: ["Symphony", "Piano Sonata", "String Quartet"],
+    },
+    {
+        id: "shazam",
+        name: "Shazam",
+        role: "Developer",
+        image: "/team/shazam.mp4",
+        bio: "Pioneering composer who revolutionized classical music in Vienna...",
+        expertise: ["Symphony", "Opera", "Chamber Music"],
         huggingFaceModel: "gpt2",
         predefinedQA: [
             {
-                question: "Tell us about the Ninth Symphony",
-                answer: "The Ninth Symphony represents humanity's universal brotherhood. Despite my complete deafness during its composition, I envisioned a work that would transcend traditional symphonic boundaries by incorporating voices and Schiller's 'Ode to Joy'."
+                question: "What inspired your Symphony No. 40?",
+                answer: "The Symphony No. 40 in G minor emerged during a period of intense creativity in 1788. It reflects both the elegance of Viennese style and the emotional depth of the Sturm und Drang movement, characterized by its dramatic intensity and minor tonality."
             },
             {
-                question: "How did you revolutionize music in Vienna?",
-                answer: "In Vienna, I expanded the classical forms I inherited from Mozart and Haydn. By emphasizing emotional expression and pushing instrumental capabilities to their limits, I helped establish the foundations of the Romantic era."
+                question: "How did Vienna influence your music?",
+                answer: "Vienna was instrumental in shaping my musical language. The city's rich cultural atmosphere, the presence of great musicians, and the sophisticated audience allowed me to experiment with new forms and push the boundaries of classical composition."
             }
         ]
     }
-
 ];
+
 export default function TeamSection() {
     return (
         <section className="bg-black py-12 font-mono" id="team">
@@ -94,7 +95,7 @@ export default function TeamSection() {
 
                 {/* Speakers grid */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    {speakers.map((speaker) => (
+                    {teamMembers.map((speaker) => (
                         <SpeakerCard
                             key={speaker.id}
                             speaker={speaker}

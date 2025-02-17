@@ -26,4 +26,5 @@ export const SITE_CONFIG = {
             farcaster: 'https://warpcast.com/eth_wien',
         }
     },
+    registerUrl: 'https://forms.zohopublic.eu/superethe1/form/RegistrationForm/formperma/RY-V_2O_uaf33Fp3Jnov71_7DW8hXEVP9huTYhMVm84'
 }; 
