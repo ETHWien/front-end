@@ -179,7 +179,7 @@ export default function TerminalPrompt() {
                     router.push('#about');
                     break;
                 case './register.sh':
-                    router.push('#register');
+                    router.push(SITE_CONFIG.registerUrl);
                     break;
                 case './join-alliance.sh':
                 case 'show sponsors':

@@ -93,14 +93,25 @@ export default function Footer() {
                     <p>
                         © {new Date().getFullYear()} {SITE_CONFIG.organization} | All_Rights_Reserved
                     </p>
-                    <a
-                        href={SITE_CONFIG.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-[#0F0] transition-colors"
-                    >
-                        {SITE_CONFIG.website.replace('https://', '')}
-                    </a>
+                    <div className="flex justify-center gap-4">
+                        <a
+                            href={SITE_CONFIG.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-[#0F0] transition-colors"
+                        >
+                            {SITE_CONFIG.website.replace('https://', '')}
+                        </a>
+                        <span>|</span>
+                        <a
+                            href={SITE_CONFIG.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-[#0F0] transition-colors"
+                        >
+                            GitHub
+                        </a>
+                    </div>
                 </div>
             </div>
         </footer>
