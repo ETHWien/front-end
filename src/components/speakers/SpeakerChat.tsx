@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { Speaker } from '@/types/Speaker';
+import Link from 'next/link';
+import { Icon } from '@iconify/react';
 
 interface SpeakerChatProps {
     speaker: Speaker;
@@ -54,16 +56,74 @@ export default function SpeakerChat({ speaker, isOpen, onClose }: SpeakerChatPro
                 <div className="border-b border-gray-800 p-4 flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                         <div className="relative w-10 h-10">
-                            <Image
-                                src={speaker.image}
-                                alt={speaker.name}
-                                fill
-                                className="rounded-full object-cover"
-                            />
+                            {speaker.image.endsWith('.mp4') ? (
+                                <video
+                                    src={speaker.image}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    className="rounded-full object-cover"
+                                />
+                            ) : (
+                                <Image
+                                    src={speaker.image}
+                                    alt={speaker.name}
+                                    fill
+                                    className="rounded-full object-cover"
+                                />
+                            )}
                         </div>
                         <div>
                             <h3 className="text-[#0F0] font-mono">{speaker.name}</h3>
-                            <p className="text-gray-400 text-sm">{speaker.role}</p>
+                            <div className="flex items-center gap-2">
+                                <p className="text-gray-400 text-sm">{speaker.role}</p>
+                                {speaker.socials && (
+                                    <div className="flex gap-2">
+                                        {speaker.socials.x && (
+                                            <Link
+                                                href={`https://x.com/${speaker.socials.x}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-gray-400 hover:text-[#0F0] transition-colors"
+                                                title={`@${speaker.socials.x} on X`}
+                                            >
+                                                <Icon
+                                                    icon="simple-icons:x"
+                                                    className="w-4 h-4"
+                                                />
+                                            </Link>
+                                        )}
+                                        {speaker.socials.farcaster && (
+                                            <Link
+                                                href={`https://warpcast.com/${speaker.socials.farcaster}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-gray-400 hover:text-[#0F0] transition-colors"
+                                                title={`${speaker.socials.farcaster} on Farcaster`}
+                                            >
+                                                <Icon
+                                                    icon="simple-icons:farcaster"
+                                                    className="w-4 h-4"
+                                                />
+                                            </Link>
+                                        )}
+                                        {speaker.socials.telegram && (
+                                            <Link
+                                                href={`https://t.me/${speaker.socials.telegram}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-gray-400 hover:text-[#0F0] transition-colors"
+                                                title={`${speaker.socials.telegram} on Telegram`}
+                                            >
+                                                <Icon
+                                                    icon="simple-icons:telegram"
+                                                    className="w-4 h-4"
+                                                />
+                                            </Link>
+                                        )}
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </div>
                     <button

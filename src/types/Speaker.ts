@@ -3,6 +3,9 @@ export interface Speaker {
     name: string;
     role: string;
     image: string;
+    socials?: {
+        [key: string]: string;
+    };
     bio: string;
     expertise: string[];
     publications?: string[];
