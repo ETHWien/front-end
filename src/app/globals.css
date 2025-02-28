@@ -75,3 +75,27 @@ body {
       -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
   }
 }
+
+/* Breathing animation durations */
+.duration-4000 {
+    transition-duration: 4000ms;
+}
+
+.duration-1800 {
+    transition-duration: 1800ms;
+}
+
+/* Add this to any elements you want to animate with the breathing */
+.breath-animated {
+    transition: all 4000ms ease-in-out;
+}
+
+/* Optional: Add smooth transitions to all elements */
+.breath-animated * {
+    transition: all 1800ms ease-in-out;
+}
+
+/* Optional: Add this to your existing theme to make text pulse with the breathing */
+.breathing-text {
+    transition: color 4000ms ease-in-out, text-shadow 4000ms ease-in-out;
+}

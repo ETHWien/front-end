@@ -12,6 +12,14 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      backdropHueRotate: {
+        '15': '15deg',
+        '30': '30deg',
+      },
+      backdropSaturate: {
+        '110': '1.1',
+        '125': '1.25',
+      }
     },
   },
   plugins: [],
