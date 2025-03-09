@@ -14,4 +14,12 @@ export interface Speaker {
         question: string;
         answer: string;
     }[];
+}
+
+interface Socials {
+    x?: string;
+    farcaster?: string;
+    telegram?: string;
+    linkedin?: string;
+    linktree?: string;
 } 

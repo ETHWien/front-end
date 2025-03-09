@@ -121,6 +121,34 @@ export default function SpeakerChat({ speaker, isOpen, onClose }: SpeakerChatPro
                                                 />
                                             </Link>
                                         )}
+                                        {speaker.socials.linktree && (
+                                            <Link
+                                                href={`https://linktr.ee/${speaker.socials.linktree}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-gray-400 hover:text-[#0F0] transition-colors"
+                                                title={`${speaker.name} on Linktree`}
+                                            >
+                                                <Icon
+                                                    icon="simple-icons:linktree"
+                                                    className="w-4 h-4"
+                                                />
+                                            </Link>
+                                        )}
+                                        {speaker.socials.linkedin && (
+                                            <Link
+                                                href={`https://linkedin.com/in/${speaker.socials.linkedin}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-gray-400 hover:text-[#0F0] transition-colors"
+                                                title={`${speaker.name} on LinkedIn`}
+                                            >
+                                                <Icon
+                                                    icon="simple-icons:linkedin"
+                                                    className="w-4 h-4"
+                                                />
+                                            </Link>
+                                        )}
                                     </div>
                                 )}
                             </div>

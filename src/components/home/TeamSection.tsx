@@ -63,6 +63,9 @@ export const teamMembers: Speaker[] = [
         name: "Alina",
         role: "Logistics",
         image: "/team/alina.jpg",
+        socials: {
+            x: "alinalatinina"
+        },
         bio: "Alina is the logistics coordinator for the event. She is responsible for ensuring that the event runs smoothly and that all attendees have a great experience.",
         expertise: ["Symphony", "Piano Sonata", "String Quartet"],
         huggingFaceModel: "gpt2",
@@ -83,8 +86,7 @@ export const teamMembers: Speaker[] = [
         role: "Developer",
         image: "/team/shazam.mp4",
         socials: {
-            "x": "0xshazam",
-            "telegram": "ZeroXShazam"
+            "linktree": "0xshazam.eth"
         },
         bio: "Serial hackathon enthusiast and full-stack developer who accidentally fell into the web3 rabbit hole and never wanted to leave. When not crafting smart contracts or debugging API endpoints, you'll find me diving into new tech stacks faster than you can say 'gm'. Currently exploring the magic of Vienna while trying to convince my rubber duck that zero-knowledge proofs are actually fun.",
         expertise: [
@@ -116,7 +118,8 @@ export const teamMembers: Speaker[] = [
         role: "Advisor",
         image: "/team/ed.jpg",
         socials: {
-            "linkedin": "ed-prinz",
+            linkedin: "ed-prinz",
+            linktree: "ed.prinz"
         },
         bio: "Expert in Web3, specializing in growth, analytics, and crypto-economics development. Chairperson at DLT Austria, Founder of Web3 Hub Vienna and Moonlytics.ai. Founding Board Member at DLT Germany and active researcher in Bitcoin, Ethereum, Web3, DeFi and NFTs.",
         expertise: [
