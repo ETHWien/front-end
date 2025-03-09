@@ -6,6 +6,7 @@ import VenueSection from '@/components/home/VenueSection';
 import TeamSection from '@/components/home/TeamSection';
 import AboutSection from '@/components/about/AboutSection';
 import ScheduleSection from '@/components/schedule/ScheduleSection';
+import PartnersSection from '@/components/home/PartnersSection';
 export default function Home() {
   return (
     <main className="min-h-screen bg-black">
@@ -15,6 +16,7 @@ export default function Home() {
       <TeamSection />
       <SpeakersSection />
       <SponsorsSection />
+      <PartnersSection />
       <VenueSection />
       <Footer />
     </main>

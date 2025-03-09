@@ -44,4 +44,5 @@ jobs:
             🚀 *Deployment Successful!*
             📝 *Commit:* `$(git log -1 --pretty=%s)`
             🔗 [View Commit](https://github.com/${{ github.repository }}/commit/${{ github.sha }})
+            🌐 [View Website](https://ethereum.wien)
             🏷 *By:* ${{ github.actor }}

@@ -9,7 +9,7 @@ export const teamMembers: Speaker[] = [
     {
         id: "rex",
         name: "rex",
-        role: "Cofounder",
+        role: "Co-Founder",
         image: "/team/rex.jpg",
         socials: {
             "x": "0xr3x",
@@ -107,6 +107,34 @@ export const teamMembers: Speaker[] = [
             {
                 question: "What's your vision for ETHWien?",
                 answer: "Picture this: a hackathon where the coffee is as strong as the smart contracts, and the only gas wars are about who gets the last slice of Sachertorte. We want to create the kind of event where beginners feel welcome to ask 'what's a blockchain?' and experts can debate ZK-rollups over Wiener Schnitzel. Vienna's tech scene is like its coffee houses - a perfect blend of tradition and innovation, and we're here to add a web3 twist to it!"
+            }
+        ]
+    },
+    {
+        id: "ed",
+        name: "Ed Prinz",
+        role: "Advisor",
+        image: "/team/ed.jpg",
+        socials: {
+            "linkedin": "ed-prinz",
+        },
+        bio: "Expert in Web3, specializing in growth, analytics, and crypto-economics development. Chairperson at DLT Austria, Founder of Web3 Hub Vienna and Moonlytics.ai. Founding Board Member at DLT Germany and active researcher in Bitcoin, Ethereum, Web3, DeFi and NFTs.",
+        expertise: [
+            "Web3 Growth",
+            "Analytics",
+            "Crypto-economics",
+            "DLT",
+            "Research"
+        ],
+        huggingFaceModel: "gpt2",
+        predefinedQA: [
+            {
+                question: "What's your vision for the Web3 ecosystem in Vienna?",
+                answer: "As the founder of Web3 Hub Vienna and Chairperson of DLT Austria, I'm focused on building a thriving Web3 ecosystem that connects traditional industries with blockchain innovation. Vienna has the potential to become a major Web3 hub in Europe, combining its rich technical talent with forward-thinking regulation."
+            },
+            {
+                question: "How do you see analytics evolving in Web3?",
+                answer: "Through Moonlytics.ai and my research work, I've seen how critical data-driven insights are for Web3 projects. The future of Web3 analytics will combine on-chain data with traditional metrics to give projects a complete view of their performance and help them make better strategic decisions."
             }
         ]
     }
