@@ -3,9 +3,7 @@ export interface Speaker {
     name: string;
     role: string;
     image: string;
-    socials?: {
-        [key: string]: string;
-    };
+    socials?: Socials;
     bio: string;
     expertise: string[];
     publications?: string[];
@@ -16,7 +14,7 @@ export interface Speaker {
     }[];
 }
 
-interface Socials {
+export interface Socials {
     x?: string;
     farcaster?: string;
     telegram?: string;
