@@ -34,3 +34,14 @@ jobs:
             pnpm install --frozen-lockfile  # Install dependencies
             pnpm build  # Build the Next.js app
             pm2 restart eth-vienna || pm2 start pnpm --name "eth-vienna" -- start
+      - name: Notify the commit on Telegram
+        uses: EverythingSuckz/github-telegram-notify@main
+        with:
+          bot_token: '${{ secrets.BOT_TOKEN }}'
+          chat_id: '${{ secrets.CHAT_ID }}'
+          topic_id: '${{ secrets.TOPIC_ID }}'
+          message: |
+            🚀 *Deployment Successful!*
+            📝 *Commit:* `$(git log -1 --pretty=%s)`
+            🔗 [View Commit](https://github.com/${{ github.repository }}/commit/${{ github.sha }})
+            🏷 *By:* ${{ github.actor }}
