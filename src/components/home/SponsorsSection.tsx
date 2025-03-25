@@ -1,90 +1,62 @@
 import Image from 'next/image';
-import { Sponsor, SponsorTier } from '@/types/sponsor';
+import { Sponsor } from '@/types/sponsor';
 import PS1 from '../terminal/PS1';
+
 const SPONSORS: Sponsor[] = [
+    {
+        name: 'Taceo',
+        logo: '/sponsors/TA_dark_icon.svg',
+        website: 'https://taceo.io',
+        tier: 'shnitzel'
+    }
 ];
 
 const TIER_CONFIG = {
-    diamond: {
-        title: 'Diamond Sponsors',
-        className: 'grid-cols-1 sm:grid-cols-2',
-        imageSize: 'w-64 h-32'
+    sausage: {
+        title: 'Sausage Sponsors',
+        width: 300,
+        height: 100
     },
-    gold: {
-        title: 'Gold Sponsors',
-        className: 'grid-cols-2 sm:grid-cols-3',
-        imageSize: 'w-48 h-24'
+    shnitzel: {
+        title: 'Shnitzel Sponsors',
+        width: 300,
+        height: 100
     },
-    silver: {
-        title: 'Silver Sponsors',
-        className: 'grid-cols-3 sm:grid-cols-4',
-        imageSize: 'w-40 h-20'
-    },
-    bronze: {
-        title: 'Bronze Sponsors',
-        className: 'grid-cols-4 sm:grid-cols-6',
-        imageSize: 'w-32 h-16'
+    grostl: {
+        title: 'Grostl Sponsors',
+        width: 300,
+        height: 100
     }
 };
 
 export default function SponsorsSection() {
-    const sponsorsByTier = SPONSORS.reduce((acc, sponsor) => {
-        if (!acc[sponsor.tier]) {
-            acc[sponsor.tier] = [];
-        }
-        acc[sponsor.tier].push(sponsor);
-        return acc;
-    }, {} as Record<SponsorTier, Sponsor[]>);
-
     return (
         <section className="bg-black py-12 font-mono" id="sponsors">
             <div className="max-w-6xl mx-auto px-4">
-                {/* Section header */}
                 <div className="mb-12">
                     <PS1 currentDir="~" customCommand="cat /etc/apt/sources.list.d/" className="text-2xl sm:text-3xl font-bold text-white mb-6 glitch-text" />
                 </div>
 
-                {/* Sponsors grid by tier */}
-                <div className="space-y-16">
-                    {Object.entries(TIER_CONFIG).map(([tier, config]) => {
-                        const tierSponsors = sponsorsByTier[tier as SponsorTier] || [];
-                        if (tierSponsors.length === 0) return null;
-
-                        return (
-                            <div key={tier} className="space-y-8">
-                                <div className="flex items-center gap-2">
-                                    <span className="text-[#0F0]">$</span>
-                                    <h3 className="text-2xl font-bold text-[#0F0]">
-                                        {config.title}
-                                    </h3>
-                                </div>
-
-                                <div className={`grid ${config.className} gap-8 items-center justify-items-center`}>
-                                    {tierSponsors.map((sponsor) => (
-                                        <a
-                                            key={sponsor.name}
-                                            href={sponsor.website}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="relative group w-full"
-                                        >
-                                            <div className={`relative ${config.imageSize} border border-gray-800 hover:border-[#0F0] p-4 transition-all duration-300 group-hover:bg-black/50`}>
-                                                <Image
-                                                    src={sponsor.logo}
-                                                    alt={`${sponsor.name} logo`}
-                                                    fill
-                                                    className="object-contain p-4 filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-all duration-300"
-                                                />
-                                            </div>
-                                        </a>
-                                    ))}
-                                </div>
-                            </div>
-                        );
-                    })}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
+                    {SPONSORS.map((sponsor) => (
+                        <div key={sponsor.name} className="w-full flex justify-center">
+                            <a
+                                href={sponsor.website}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <Image
+                                    src={sponsor.logo}
+                                    alt={`${sponsor.name} logo`}
+                                    width={TIER_CONFIG[sponsor.tier].width}
+                                    height={TIER_CONFIG[sponsor.tier].height}
+                                    className="opacity-80 hover:opacity-100 transition-opacity"
+                                />
+                            </a>
+                        </div>
+                    ))}
                 </div>
 
-                {/* Become a sponsor CTA */}
                 <div className="mt-16 text-center">
                     <div className="inline-flex flex-col items-center">
                         <a

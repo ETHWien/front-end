@@ -16,7 +16,7 @@ const BreathingIcon = ({ isInhaling }: { isInhaling: boolean }) => (
 
 export default function BreathingEffect() {
     const [isInhaling, setIsInhaling] = useState(false);
-    const [isPlaying, setIsPlaying] = useState(true); // Start playing by default
+    const [isPlaying, setIsPlaying] = useState(false); // Changed to false by default
     const [colorStep, setColorStep] = useState(0);
     const inhaleAudioRef = useRef<HTMLAudioElement | null>(null);
     const exhaleAudioRef = useRef<HTMLAudioElement | null>(null);
@@ -33,9 +33,6 @@ export default function BreathingEffect() {
         // Set volume
         if (inhaleAudioRef.current) inhaleAudioRef.current.volume = 0.3;
         if (exhaleAudioRef.current) exhaleAudioRef.current.volume = 0.3;
-
-        // Start breathing automatically
-        startBreathing();
 
         return () => {
             stopBreathing();
@@ -84,6 +81,8 @@ export default function BreathingEffect() {
             exhaleAudioRef.current.pause();
             exhaleAudioRef.current.currentTime = 0;
         }
+
+        setIsInhaling(false); // Reset inhaling state when stopped
     };
 
     const toggleBreathing = () => {
@@ -103,18 +102,20 @@ export default function BreathingEffect() {
 
     return (
         <>
-            {/* Overlay for color cycling and dimming */}
-            <div
-                className={`fixed inset-0 w-full h-full z-50 pointer-events-none transition-all duration-1800`}
-                style={{
-                    backdropFilter: `
-                        hue-rotate(${colorSteps[colorStep]}deg)
-                        brightness(${isInhaling ? '0.75' : '1'})
-                        contrast(${isInhaling ? '1.1' : '1'})
-                        saturate(${isInhaling ? '1.1' : '1'})
-                    `
-                }}
-            />
+            {/* Only show overlay when playing */}
+            {isPlaying && (
+                <div
+                    className={`fixed inset-0 w-full h-full z-50 pointer-events-none transition-all duration-1800`}
+                    style={{
+                        backdropFilter: `
+                            hue-rotate(${colorSteps[colorStep]}deg)
+                            brightness(${isInhaling ? '0.75' : '1'})
+                            contrast(${isInhaling ? '1.1' : '1'})
+                            saturate(${isInhaling ? '1.1' : '1'})
+                        `
+                    }}
+                />
+            )}
 
             {/* Control button with heart gif */}
             <button
