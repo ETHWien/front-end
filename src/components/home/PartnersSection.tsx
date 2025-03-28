@@ -24,6 +24,20 @@ const partners: Partner[] = [
         width: 300,
         height: 100,
         link: 'https://web3hub.wien'
+    },
+    {
+        name: 'dRPC',
+        logo: '/partners/dRPC_fullcollor_white.svg',
+        width: 300,
+        height: 100,
+        link: 'https://drpc.org'
+    },
+    {
+        name: 'ETH Bucharest',
+        logo: '/partners/ETH-Bucharest-Logo-white.svg',
+        width: 300,
+        height: 100,
+        link: 'https://ethbucharest.xyz'
     }
 ];
 
