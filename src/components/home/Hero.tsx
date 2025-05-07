@@ -38,6 +38,8 @@ export default function Hero() {
                     <div className="flex gap-4">
                         <a
                             href={SITE_CONFIG.registerUrl}
+                            target='_blank'
+                            rel="noopener noreferrer"
                             className="inline-block border border-[#0F0] text-[#0F0] px-8 py-3 hover:bg-[#0F0] hover:text-black transition-colors font-mono"
                         >
                             ./register.sh

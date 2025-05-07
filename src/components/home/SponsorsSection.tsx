@@ -57,16 +57,6 @@ export default function SponsorsSection() {
                     ))}
                 </div>
 
-                <div className="mt-16 text-center">
-                    <div className="inline-flex flex-col items-center">
-                        <a
-                            href="/sponsors"
-                            className="inline-block border border-[#0F0] text-[#0F0] px-8 py-3 hover:bg-[#0F0] hover:text-black transition-colors font-mono"
-                        >
-                            ./join-alliance.sh
-                        </a>
-                    </div>
-                </div>
             </div>
         </section>
     );

@@ -27,5 +27,5 @@ export const SITE_CONFIG = {
         }
     },
     githubUrl: 'https://github.com/ETHWien',
-    registerUrl: 'https://forms.zohopublic.eu/superethe1/form/RegistrationForm/formperma/RY-V_2O_uaf33Fp3Jnov71_7DW8hXEVP9huTYhMVm84'
+    registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScg2wuNsYVaOyWIYeGCCNox2MKMm_KZv5IjKqFCBXR7M34EQQ/viewform'
 }; 

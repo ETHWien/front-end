@@ -32,7 +32,7 @@ export const teamMembers: Speaker[] = [
     {
         id: "deepshikha",
         name: "Deepshikha",
-        role: "Co-Founder",
+        role: "Member",
         image: "/team/deepshikha.jpg",
         bio: "26 going on 50 in web3 years. Public goods maximalist and ReFi enthusiast with a soft spot for crypto commons. Africa-raised builder exploring the intersection of DeFi and real-world impact. Currently obsessed with making web3 accessible to everyone, one stable coin at a time. When not researching decentralized platforms, you'll find me explaining why your favorite protocol should be a public good.",
         expertise: [
@@ -83,7 +83,7 @@ export const teamMembers: Speaker[] = [
     {
         id: "shazam",
         name: "Shazam",
-        role: "Developer",
+        role: "Co-Founder",
         image: "/team/shazam.mp4",
         socials: {
             "linktree": "0xshazam.eth"
