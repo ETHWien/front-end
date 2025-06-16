@@ -16,7 +16,7 @@ ETHWien combines Vienna's rich cultural heritage with cutting-edge blockchain te
 
 ## 🗓️ Event Details
 
-- **Date**: September 12-14, 2025
+- **Date**: TBD
 - **Location**: Vienna, Austria
 - **Format**: 36-hour hackathon
 - **Participants**: Developers, designers, and web3 enthusiasts
